@@ -16,6 +16,7 @@ import { useLocation } from 'react-router-dom'
 import { useTheme } from '@/hooks/useTheme'
 import { useSound } from '@/hooks/use-sound'
 import { click001Sound } from '@/lib/click-001'
+import { toggle004Sound } from '@/lib/toggle-004'
 import { cn } from '@/utils/cn'
 
 interface DockItem {
@@ -23,6 +24,7 @@ interface DockItem {
     label?: string
     href: string
     onClick?: (e?: React.MouseEvent) => void
+    sound?: any
 }
 
 export default function Dock() {
@@ -31,6 +33,8 @@ export default function Dock() {
     const { pathname } = useLocation()
     const [activeSection, setActiveSection] = useState<string>('home')
     const [isMobile, setIsMobile] = useState(false)
+
+    const [playToggle] = useSound(toggle004Sound, { interrupt: true })
 
     useEffect(() => {
         const checkMobile = () => setIsMobile(window.innerWidth < 640)
@@ -98,9 +102,11 @@ export default function Dock() {
 
     const themeItem: DockItem = {
         icon: theme === 'light' ? Moon : Sun,
+        label: 'Theme',
         href: '#',
         onClick: (e) => {
             e?.preventDefault()
+            playToggle()
             toggleTheme()
         },
     }
