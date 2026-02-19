@@ -23,7 +23,7 @@ import { cn } from '@/utils/cn'
 
 interface DockItem {
     icon: LucideIcon
-    label: string
+    label?: string
     href: string
     onClick?: (e?: React.MouseEvent) => void
 }
@@ -76,7 +76,6 @@ export default function Dock() {
 
     const themeItem: DockItem = {
         icon: theme === 'light' ? Moon : Sun,
-        label: 'Theme',
         href: '#',
         onClick: (e) => {
             e?.preventDefault()
@@ -166,9 +165,11 @@ function IconContainer({
                     : 'bg-muted hover:bg-muted-foreground/10',
             )}
         >
-            <span className="absolute -top-8 left-1/2 -translate-x-1/2 scale-0 rounded bg-foreground px-2 py-1 text-[10px] text-background opacity-0 transition-all group-hover:scale-100 group-hover:opacity-100 pointer-events-none">
-                {label}
-            </span>
+            {label && (
+                <span className="absolute -top-8 left-1/2 -translate-x-1/2 scale-0 rounded bg-foreground px-2 py-1 text-[10px] text-background opacity-0 transition-all group-hover:scale-100 group-hover:opacity-100 pointer-events-none">
+                    {label}
+                </span>
+            )}
             <Icon
                 className={cn(
                     'h-1/2 w-1/2 transition-colors',
