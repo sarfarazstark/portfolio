@@ -104,7 +104,7 @@ export default function Dock() {
                         {...item}
                     />
                 ))}
-                <div className="h-8 w-px bg-border mb-2" />
+                <div className="h-8 w-px bg-border mb-1" />
                 <IconContainer
                     mouseX={mouseX}
                     key={themeItem.label}
