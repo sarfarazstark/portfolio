@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import type { Skill } from '../../types/portfolio'
+import type { Skill } from '@/types/portfolio'
 
 const Skills = ({ skills }: { skills: Skill[] }) => {
     return (

@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import type { Experience as ExperienceType } from '../../types/portfolio'
+import type { Experience as ExperienceType } from '@/types/portfolio'
 import { ChevronDown } from 'lucide-react'
-import { cn } from '../../utils/cn'
+import { cn } from '@/utils/cn'
 
 const Experience = ({ experiences }: { experiences: ExperienceType[] }) => {
     const [expandedIds, setExpandedIds] = useState<string[]>([])

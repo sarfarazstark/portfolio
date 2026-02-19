@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import type { Project } from '../../../types/portfolio'
+import type { Project } from '@/types/portfolio'
 import { Github, Globe } from 'lucide-react'
 
 interface ProjectCardProps {

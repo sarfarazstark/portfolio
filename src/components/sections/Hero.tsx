@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import type { Profile } from '../../types/portfolio'
+import type { Profile } from '@/types/portfolio'
 
 const Hero = ({ profile }: { profile: Profile }) => {
     return (

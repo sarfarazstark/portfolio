@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import type { Footer as FooterType } from '../../types/portfolio'
+import type { Footer as FooterType } from '@/types/portfolio'
 
 const Footer = ({ footer }: { footer: FooterType }) => {
     return (

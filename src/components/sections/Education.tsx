@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import type { Education as EducationType } from '../../types/portfolio'
+import type { Education as EducationType } from '@/types/portfolio'
 
 const Education = ({ education }: { education: EducationType[] }) => {
     return (

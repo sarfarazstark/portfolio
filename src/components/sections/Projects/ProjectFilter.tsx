@@ -1,5 +1,5 @@
-import { useProjectFilter } from '../../../hooks/useProjectFilter'
-import { cn } from '../../../utils/cn'
+import { useProjectFilter } from '@/hooks/useProjectFilter'
+import { cn } from '@/utils/cn'
 
 interface ProjectFilterProps {
     tags: string[]

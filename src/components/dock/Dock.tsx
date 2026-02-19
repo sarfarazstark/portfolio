@@ -18,8 +18,8 @@ import {
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { useRef, useEffect, useState } from 'react'
-import { useTheme } from '../../hooks/useTheme'
-import { cn } from '../../utils/cn'
+import { useTheme } from '@/hooks/useTheme'
+import { cn } from '@/utils/cn'
 
 interface DockItem {
     icon: LucideIcon

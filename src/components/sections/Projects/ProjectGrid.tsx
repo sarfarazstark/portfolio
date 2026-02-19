@@ -1,7 +1,7 @@
 import { useMemo, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import type { Project } from '../../../types/portfolio'
-import { useProjectFilter } from '../../../hooks/useProjectFilter'
+import type { Project } from '@/types/portfolio'
+import { useProjectFilter } from '@/hooks/useProjectFilter'
 import ProjectCard from './ProjectCard'
 import ProjectFilter from './ProjectFilter'
 
