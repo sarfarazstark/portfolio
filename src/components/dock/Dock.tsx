@@ -57,23 +57,25 @@ export default function Dock() {
             ]
 
             // Priority 1: Check if we are at the very bottom of the page
-            const isAtBottom =
-                window.innerHeight + window.scrollY >=
-                document.documentElement.scrollHeight - 100
+            const scrollPosition = window.innerHeight + window.scrollY
+            const totalHeight = document.documentElement.scrollHeight
+            const isAtBottom = scrollPosition >= totalHeight - 50
 
             if (isAtBottom) {
                 setActiveSection('contact')
                 return
             }
 
-            // Priority 2: Standard scroll spy with 40% threshold
+            // Priority 2: Precise scroll spy using a fixed threshold from the top
+            // This aligns with our scroll-padding-top in index.css
             let currentSection = 'home'
-            const threshold = window.innerHeight * 0.4
+            const threshold = 150 // px from the top
 
             for (const sectionId of sections) {
                 const element = document.getElementById(sectionId)
                 if (element) {
                     const rect = element.getBoundingClientRect()
+                    // If the top of the section is at or above the threshold
                     if (rect.top <= threshold) {
                         currentSection = sectionId
                     }
