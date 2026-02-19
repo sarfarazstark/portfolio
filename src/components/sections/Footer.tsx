@@ -3,8 +3,8 @@ import type { Footer as FooterType } from '@/types/portfolio'
 
 const Footer = ({ footer }: { footer: FooterType }) => {
     return (
-        <section id="contact" className="pb-24">
-            <div className="relative overflow-hidden rounded-2xl border border-border bg-card p-8 md:p-12 text-center shadow-sm">
+        <section id="contact" className="pb-20 sm:pb-24">
+            <div className="relative overflow-hidden rounded-2xl border border-border bg-card p-6 sm:p-8 lg:p-12 text-center shadow-sm">
                 {/* Boxed Grid Background */}
                 <div
                     className="absolute inset-0 z-0 pointer-events-none opacity-50"
@@ -48,7 +48,7 @@ const Footer = ({ footer }: { footer: FooterType }) => {
                         itssarfarazstark@gmail.com and I'll respond whenever I
                         can.
                     </motion.p>
-                    <div className="flex justify-center gap-6 pt-4">
+                    <div className="flex justify-center gap-4 sm:gap-6 pt-4">
                         {footer.socials.map((social) => (
                             <a
                                 key={social.platform}

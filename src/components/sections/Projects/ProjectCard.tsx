@@ -46,10 +46,10 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                     )}
                 </div>
             </div>
-            <div className="flex flex-1 flex-col p-4">
+            <div className="flex flex-1 flex-col p-3 sm:p-4">
                 <div className="space-y-1">
                     <div className="flex items-center justify-between">
-                        <h3 className="font-bold tracking-tight text-base">
+                        <h3 className="font-bold tracking-tight text-sm sm:text-base">
                             {project.title}
                         </h3>
                     </div>
@@ -58,7 +58,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                             {project.period}
                         </p>
                     )}
-                    <p className="text-[12px] text-muted-foreground line-clamp-4 leading-relaxed pt-1">
+                    <p className="text-[11px] sm:text-[12px] text-muted-foreground line-clamp-3 sm:line-clamp-4 leading-relaxed pt-1">
                         {project.description}
                     </p>
                 </div>

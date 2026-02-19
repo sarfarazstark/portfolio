@@ -17,7 +17,7 @@ const About = ({ content }: { content: string }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-base text-muted-foreground leading-relaxed"
+                className="text-sm sm:text-base text-muted-foreground leading-relaxed"
             >
                 {content}
             </motion.p>

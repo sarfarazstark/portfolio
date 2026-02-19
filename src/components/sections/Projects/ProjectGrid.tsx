@@ -71,7 +71,7 @@ const ProjectGrid = ({ projects }: ProjectGridProps) => {
 
             <ProjectFilter tags={allTags} />
 
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
                 <AnimatePresence mode="popLayout">
                     {filteredProjects.map((project) => (
                         <ProjectCard key={project.id} project={project} />

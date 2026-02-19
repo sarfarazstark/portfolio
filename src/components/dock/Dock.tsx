@@ -32,6 +32,14 @@ export default function Dock() {
     const mouseX = useMotionValue(Infinity)
     const { theme, toggleTheme } = useTheme()
     const [activeSection, setActiveSection] = useState<string>('home')
+    const [isMobile, setIsMobile] = useState(false)
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 640)
+        checkMobile()
+        window.addEventListener('resize', checkMobile)
+        return () => window.removeEventListener('resize', checkMobile)
+    }, [])
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -87,12 +95,12 @@ export default function Dock() {
         <motion.div
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50"
+            className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-50"
         >
             <nav
                 onMouseMove={(e) => mouseX.set(e.pageX)}
                 onMouseLeave={() => mouseX.set(Infinity)}
-                className="mx-auto flex h-16 items-end gap-4 rounded-2xl border border-border bg-background/80 px-4 pb-3 backdrop-blur-md"
+                className="mx-auto flex h-14 sm:h-16 items-end gap-2 sm:gap-4 rounded-2xl border border-border bg-background/80 px-3 pb-2.5 sm:px-4 sm:pb-3 backdrop-blur-md"
                 role="navigation"
                 aria-label="Main navigation"
             >
@@ -101,14 +109,16 @@ export default function Dock() {
                         mouseX={mouseX}
                         key={item.label}
                         active={activeSection === item.href.replace('#', '')}
+                        isMobile={isMobile}
                         {...item}
                     />
                 ))}
-                <div className="h-8 w-px bg-border mb-1" />
+                <div className="h-6 sm:h-8 w-px bg-border mb-1" />
                 <IconContainer
                     mouseX={mouseX}
                     key={themeItem.label}
                     active={false}
+                    isMobile={isMobile}
                     {...themeItem}
                 />
             </nav>
@@ -123,9 +133,11 @@ function IconContainer({
     href,
     onClick,
     active,
+    isMobile = false,
 }: DockItem & {
     mouseX: MotionValue<number>
     active: boolean
+    isMobile?: boolean
 }) {
     const ref = useRef<HTMLAnchorElement>(null)
 
@@ -137,8 +149,19 @@ function IconContainer({
         return val - bounds.x - bounds.width / 2
     })
 
-    const widthTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40])
-    const heightTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40])
+    const minSize = isMobile ? 36 : 40
+    const maxSize = isMobile ? 56 : 80
+
+    const widthTransform = useTransform(
+        distance,
+        [-150, 0, 150],
+        [minSize, maxSize, minSize],
+    )
+    const heightTransform = useTransform(
+        distance,
+        [-150, 0, 150],
+        [minSize, maxSize, minSize],
+    )
 
     const width = useSpring(widthTransform, {
         mass: 0.1,

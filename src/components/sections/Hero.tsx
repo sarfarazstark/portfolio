@@ -10,7 +10,7 @@ const Hero = ({ profile }: { profile: Profile }) => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="text-3xl font-bold tracking-tight sm:text-4xl"
+                        className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl"
                     >
                         Hi, I'm Sarfaraz
                     </motion.h1>
@@ -26,7 +26,7 @@ const Hero = ({ profile }: { profile: Profile }) => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="text-base text-muted-foreground leading-relaxed"
+                        className="text-sm sm:text-base text-muted-foreground leading-relaxed"
                     >
                         {profile.bio}
                     </motion.p>
@@ -35,7 +35,7 @@ const Hero = ({ profile }: { profile: Profile }) => {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="relative flex shrink-0 overflow-hidden size-24 md:size-32 border border-zinc-400/40 rounded-full shadow-lg ring-4 ring-muted"
+                    className="relative flex shrink-0 overflow-hidden size-20 sm:size-24 lg:size-32 border border-zinc-400/40 rounded-full shadow-lg ring-4 ring-muted"
                 >
                     <img
                         src={profile.avatar}

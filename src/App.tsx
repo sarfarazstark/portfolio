@@ -41,7 +41,7 @@ function App() {
                 }}
             />
 
-            <main className="relative z-10 max-w-xl mx-auto px-6 py-12 md:py-24 space-y-24">
+            <main className="relative z-10 max-w-xl lg:max-w-2xl mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-24 space-y-16 sm:space-y-20 lg:space-y-24">
                 <Hero profile={data.profile} />
                 <About content={data.about} />
                 <Experience experiences={data.experience} />

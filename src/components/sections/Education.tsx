@@ -31,7 +31,7 @@ const Education = ({ education }: { education: EducationType[] }) => {
                             />
                         </div>
                         <div className="flex flex-1 flex-col justify-center">
-                            <div className="flex items-center justify-between">
+                            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-0.5 sm:gap-0">
                                 <h3 className="text-xs font-bold leading-tight">
                                     {edu.school}
                                 </h3>

@@ -33,7 +33,7 @@ const Experience = ({ experiences }: { experiences: ExperienceType[] }) => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="group relative flex gap-4 p-3 rounded-xl border border-transparent hover:border-border hover:bg-muted/50 transition-all cursor-pointer"
+                            className="group relative flex gap-4 p-2.5 sm:p-3 rounded-xl border border-transparent hover:border-border hover:bg-muted/50 transition-all cursor-pointer"
                             onClick={() => toggleExpand(exp.id)}
                         >
                             <div className="relative flex shrink-0 overflow-hidden size-10 border border-zinc-400/40 rounded-full shadow-lg ring-4 ring-muted bg-white">
@@ -45,7 +45,7 @@ const Experience = ({ experiences }: { experiences: ExperienceType[] }) => {
                                 />
                             </div>
                             <div className="flex flex-1 flex-col justify-center">
-                                <div className="flex items-center justify-between">
+                                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-0.5 sm:gap-0">
                                     <h3 className="text-xs font-bold leading-tight">
                                         {exp.company}
                                     </h3>

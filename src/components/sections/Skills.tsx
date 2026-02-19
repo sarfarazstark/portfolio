@@ -12,7 +12,7 @@ const Skills = ({ skills }: { skills: Skill[] }) => {
             >
                 Skills
             </motion.h2>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {skills.map((skill, index) => (
                     <motion.div
                         key={`${skill.name}-${index}`}
@@ -20,7 +20,7 @@ const Skills = ({ skills }: { skills: Skill[] }) => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.3, delay: index * 0.05 }}
-                        className="inline-flex items-center gap-2 rounded-sm border border-muted-foreground/20 bg-transparent px-4 py-1.5 text-xs font-medium text-foreground transition-colors hover:bg-muted/30"
+                        className="inline-flex items-center gap-2 rounded-sm border border-muted-foreground/20 bg-transparent px-3 py-1 sm:px-4 sm:py-1.5 text-xs font-medium text-foreground transition-colors hover:bg-muted/30"
                     >
                         {skill.icon && (
                             <i
