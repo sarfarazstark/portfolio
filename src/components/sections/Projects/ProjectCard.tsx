@@ -1,81 +1,82 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import type { Project } from '@/types/portfolio'
-import { Github, ArrowUpRight } from 'lucide-react'
+import ProjectDetailModal from './ProjectDetailModal'
 
 interface ProjectCardProps {
     project: Project
 }
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
+    const [isModalOpen, setIsModalOpen] = useState(false)
+
     return (
-        <motion.div
-            layout
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.3 }}
-            className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card text-card-foreground transition-all hover:shadow-lg"
-        >
-            <div className="relative aspect-video overflow-hidden">
-                <img
-                    src={project.image}
-                    alt={project.title}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute top-2 right-2 flex items-center gap-1.5">
-                    {project.links.github && (
-                        <a
-                            href={project.links.github}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="inline-flex items-center justify-center size-8 rounded-full bg-background/80 backdrop-blur-sm text-muted-foreground hover:text-foreground transition-colors"
-                        >
-                            <Github size={14} />
-                        </a>
-                    )}
-                    {project.links.live && (
-                        <a
-                            href={project.links.live}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="inline-flex items-center justify-center size-8 rounded-full bg-background/80 backdrop-blur-sm text-muted-foreground hover:text-foreground transition-colors"
-                        >
-                            <ArrowUpRight size={14} />
-                        </a>
-                    )}
+        <>
+            <motion.div
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.3 }}
+                onClick={() => setIsModalOpen(true)}
+                className="group flex cursor-pointer flex-col h-full overflow-hidden rounded-2xl border border-zinc-400/20 bg-zinc-400/5 transition-all hover:bg-zinc-400/10 hover:shadow-xl hover:border-zinc-400/40 dark:bg-zinc-900/50"
+            >
+                <div className="relative aspect-video overflow-hidden shrink-0">
+                    <img
+                        src={project.image}
+                        alt={project.title}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-zinc-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
-            </div>
-            <div className="flex flex-1 flex-col p-3 sm:p-4">
-                <div className="space-y-1">
-                    <div className="flex items-center justify-between">
-                        <h3 className="font-bold tracking-tight text-sm sm:text-base">
+
+                <div className="flex flex-1 flex-col p-4 sm:p-5">
+                    <div className="space-y-1.5 flex-1">
+                        <h3 className="text-base font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 group-hover:text-zinc-600 dark:group-hover:text-zinc-400 transition-colors">
                             {project.title}
                         </h3>
-                    </div>
-                    {project.period && (
-                        <p className="text-[11px] font-medium text-muted-foreground">
-                            {project.period}
+
+                        {project.period && (
+                            <p className="text-[11px] font-medium text-zinc-400">
+                                {project.period}
+                            </p>
+                        )}
+
+                        <p className="text-[13px] text-zinc-500 dark:text-zinc-400 line-clamp-3 leading-relaxed">
+                            {project.description}
                         </p>
-                    )}
-                    <p className="text-[11px] sm:text-[12px] text-muted-foreground line-clamp-3 sm:line-clamp-4 leading-relaxed pt-1">
-                        {project.description}
-                    </p>
-                </div>
-                <div className="mt-auto pt-4">
-                    <div className="flex flex-wrap gap-1.5">
-                        {project.techStack.map((tech) => (
-                            <span
-                                key={tech}
-                                className="inline-flex items-center rounded-full bg-muted border border-border px-2 py-0.5 text-[10px] font-medium text-muted-foreground"
-                            >
-                                {tech}
-                            </span>
-                        ))}
+                    </div>
+
+                    <div className="mt-5 pt-4 border-t border-zinc-400/10">
+                        <div className="flex items-center justify-between">
+                            <div className="flex flex-wrap gap-1.5 min-h-6 items-center">
+                                {project.techStack.slice(0, 3).map((tech) => (
+                                    <span
+                                        key={tech}
+                                        className="inline-flex items-center rounded-md border border-zinc-400/20 px-1.5 py-0.5 text-[11px] font-normal text-zinc-500 dark:text-zinc-400"
+                                    >
+                                        {tech}
+                                    </span>
+                                ))}
+                                {project.techStack.length > 3 && (
+                                    <span className="inline-flex items-center text-[11px] font-medium text-zinc-400 border border-zinc-400/20 px-1.5 py-0.5 rounded-md">
+                                        +{project.techStack.length - 3}
+                                    </span>
+                                )}
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </motion.div>
+            </motion.div>
+
+            <ProjectDetailModal
+                project={project}
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+            />
+        </>
     )
 }
 

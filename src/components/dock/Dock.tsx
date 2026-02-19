@@ -2,7 +2,6 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import type { MotionValue } from 'framer-motion'
 import {
     Home,
-    User,
     Briefcase,
     GraduationCap,
     Code,
@@ -13,6 +12,7 @@ import {
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { useRef, useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { useTheme } from '@/hooks/useTheme'
 import { useSound } from '@/hooks/use-sound'
 import { click001Sound } from '@/lib/click-001'
@@ -28,6 +28,7 @@ interface DockItem {
 export default function Dock() {
     const mouseX = useMotionValue(Infinity)
     const { theme, toggleTheme } = useTheme()
+    const { pathname } = useLocation()
     const [activeSection, setActiveSection] = useState<string>('home')
     const [isMobile, setIsMobile] = useState(false)
 
@@ -39,40 +40,56 @@ export default function Dock() {
     }, [])
 
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setActiveSection(entry.target.id)
+        const handleScroll = () => {
+            const sections = [
+                'home',
+                'work',
+                'education',
+                'skills',
+                'projects',
+                'contact',
+            ]
+
+            // Priority 1: Check if we are at the very bottom of the page
+            const isAtBottom =
+                window.innerHeight + window.scrollY >=
+                document.documentElement.scrollHeight - 100
+
+            if (isAtBottom) {
+                setActiveSection('contact')
+                return
+            }
+
+            // Priority 2: Standard scroll spy with 40% threshold
+            let currentSection = 'home'
+            const threshold = window.innerHeight * 0.4
+
+            for (const sectionId of sections) {
+                const element = document.getElementById(sectionId)
+                if (element) {
+                    const rect = element.getBoundingClientRect()
+                    if (rect.top <= threshold) {
+                        currentSection = sectionId
                     }
-                })
-            },
-            {
-                rootMargin: '-20% 0px -70% 0px',
-            },
-        )
+                }
+            }
 
-        const sections = [
-            'home',
-            'about',
-            'work',
-            'education',
-            'skills',
-            'projects',
-            'contact',
-        ]
-        sections.forEach((id) => {
-            const el = document.getElementById(id)
-            if (el) observer.observe(el)
-        })
+            setActiveSection(currentSection)
+        }
 
-        return () => observer.disconnect()
+        window.addEventListener('scroll', handleScroll, { passive: true })
+        // Trigger initial check
+        handleScroll()
+
+        return () => window.removeEventListener('scroll', handleScroll)
     }, [])
+
+    // Only show dock on Home page - Moved after all hooks to comply with Rules of Hooks
+    if (pathname !== '/') return null
 
     const navItems: DockItem[] = [
         { icon: Home, label: 'Home', href: '#home' },
-        { icon: User, label: 'About', href: '#about' },
-        { icon: Briefcase, label: 'Work', href: '#work' },
+        { icon: Briefcase, label: 'Experience', href: '#work' },
         { icon: GraduationCap, label: 'Education', href: '#education' },
         { icon: Code, label: 'Skills', href: '#skills' },
         { icon: FolderOpen, label: 'Projects', href: '#projects' },

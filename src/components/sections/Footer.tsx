@@ -5,7 +5,6 @@ const Footer = ({ footer }: { footer: FooterType }) => {
     return (
         <section id="contact" className="pb-20 sm:pb-24">
             <div className="relative overflow-hidden rounded-2xl border border-border bg-card p-6 sm:p-8 lg:p-12 text-center shadow-sm">
-                {/* Boxed Grid Background */}
                 <div
                     className="absolute inset-0 z-0 pointer-events-none opacity-50"
                     style={{
@@ -26,7 +25,7 @@ const Footer = ({ footer }: { footer: FooterType }) => {
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="inline-block rounded-lg bg-foreground px-3 py-1 text-sm text-background font-medium"
+                        className="text-xs relative inline-flex items-center rounded-lg bg-white dark:bg-zinc-950 border border-zinc-400/40 px-3 py-1 font-medium tracking-wide text-zinc-600 dark:text-zinc-200"
                     >
                         Contact
                     </motion.div>
@@ -34,9 +33,9 @@ const Footer = ({ footer }: { footer: FooterType }) => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-xl font-bold tracking-tight sm:text-2xl"
+                        className="text-xl font-bold tracking-tight sm:text-2xl text-zinc-900 dark:text-zinc-100"
                     >
-                        Get in Touch
+                        Get in touch
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}

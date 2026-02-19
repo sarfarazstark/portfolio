@@ -14,15 +14,20 @@ const Experience = ({ experiences }: { experiences: ExperienceType[] }) => {
     }
 
     return (
-        <section id="work" className="space-y-6">
-            <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-xl font-semibold tracking-tight"
-            >
-                Work Experience
-            </motion.h2>
+        <section id="work" className="space-y-6 pt-10">
+            <div className="flex flex-col items-center gap-3">
+                <div className="relative w-full flex justify-center items-center">
+                    <div className="absolute inset-x-0 top-1/2 h-px bg-linear-to-r from-transparent via-zinc-400/20 to-transparent" />
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        className="text-xs relative inline-flex items-center rounded-lg bg-white dark:bg-zinc-950 border border-zinc-400/40 px-3 py-1 font-medium tracking-wide text-zinc-600 dark:text-zinc-200"
+                    >
+                        Work experience
+                    </motion.div>
+                </div>
+            </div>
             <div className="space-y-2">
                 {experiences.map((exp, index) => {
                     const isExpanded = expandedIds.includes(exp.id)
@@ -50,7 +55,7 @@ const Experience = ({ experiences }: { experiences: ExperienceType[] }) => {
                                         {exp.company}
                                     </h3>
                                     <div className="flex items-center gap-2">
-                                        <span className="text-[10px] text-muted-foreground tabular-nums">
+                                        <span className="text-[11px] text-muted-foreground tabular-nums">
                                             {exp.period}
                                         </span>
                                         <ChevronDown
