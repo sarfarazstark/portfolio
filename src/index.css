@@ -75,3 +75,9 @@ body {
         @apply bg-zinc-200 dark:bg-zinc-800;
     }
 }
+
+/* Iconos oscuros que no se ven en dark mode */
+.dark .devicon-nextjs-plain.colored,
+.dark .devicon-express-original.colored {
+	color: #fafafa !important;
+}
