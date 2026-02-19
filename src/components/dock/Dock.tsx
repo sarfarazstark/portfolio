@@ -1,24 +1,21 @@
-import {
-    motion,
-    useMotionValue,
-    useSpring,
-    useTransform,
-    MotionValue,
-} from 'framer-motion'
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import type { MotionValue } from 'framer-motion'
 import {
     Home,
     User,
     Briefcase,
     GraduationCap,
-    Code2,
-    FolderKanban,
-    MessageSquare,
+    Code,
+    FolderOpen,
+    Mail,
     Sun,
     Moon,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { useRef, useEffect, useState } from 'react'
 import { useTheme } from '@/hooks/useTheme'
+import { useSound } from '@/hooks/use-sound'
+import { click001Sound } from '@/lib/click-001'
 import { cn } from '@/utils/cn'
 
 interface DockItem {
@@ -77,9 +74,9 @@ export default function Dock() {
         { icon: User, label: 'About', href: '#about' },
         { icon: Briefcase, label: 'Work', href: '#work' },
         { icon: GraduationCap, label: 'Education', href: '#education' },
-        { icon: Code2, label: 'Skills', href: '#skills' },
-        { icon: FolderKanban, label: 'Projects', href: '#projects' },
-        { icon: MessageSquare, label: 'Contact', href: '#contact' },
+        { icon: Code, label: 'Skills', href: '#skills' },
+        { icon: FolderOpen, label: 'Projects', href: '#projects' },
+        { icon: Mail, label: 'Contact', href: '#contact' },
     ]
 
     const themeItem: DockItem = {
@@ -174,10 +171,13 @@ function IconContainer({
         damping: 12,
     })
 
+    const [play] = useSound(click001Sound, { interrupt: true })
+
     return (
         <motion.a
             href={href}
             onClick={onClick}
+            onMouseEnter={() => play()}
             style={{ width, height }}
             ref={ref}
             aria-label={label}
