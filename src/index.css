@@ -1,6 +1,6 @@
 @import 'tailwindcss';
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -19,12 +19,12 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 1rem;
+    scroll-padding-top: 6.25rem;
 }
 
 @media (min-width: 640px) {
     html {
-        scroll-padding-top: 2rem;
+        scroll-padding-top: 7.5rem;
     }
 }
 
@@ -110,11 +110,11 @@ body {
         --card-foreground: #fafafa;
         --grid-color: #1e1e21;
     }
-  * {
-    @apply border-border outline-ring/50;
+    * {
+        @apply border-border outline-ring/50;
     }
-  body {
-    @apply bg-background text-foreground;
+    body {
+        @apply bg-background text-foreground;
     }
 }
 
@@ -127,7 +127,7 @@ body {
 /* Iconos oscuros que no se ven en dark mode */
 .dark .devicon-nextjs-plain.colored,
 .dark .devicon-express-original.colored {
-	color: #fafafa !important;
+    color: #fafafa !important;
 }
 
 @theme inline {

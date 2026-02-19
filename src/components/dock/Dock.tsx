@@ -12,11 +12,12 @@ import {
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { useRef, useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useTheme } from '@/hooks/useTheme'
 import { useSound } from '@/hooks/use-sound'
 import { click001Sound } from '@/lib/click-001'
-import { toggle004Sound } from '@/lib/toggle-004'
+import { toggle001Sound } from '@/lib/toggle-001'
+import type { SoundAsset } from '@/lib/sound-types'
 import { cn } from '@/utils/cn'
 
 interface DockItem {
@@ -24,17 +25,18 @@ interface DockItem {
     label?: string
     href: string
     onClick?: (e?: React.MouseEvent) => void
-    sound?: any
+    sound?: SoundAsset
 }
 
 export default function Dock() {
     const mouseX = useMotionValue(Infinity)
     const { theme, toggleTheme } = useTheme()
     const { pathname } = useLocation()
+    const navigate = useNavigate()
     const [activeSection, setActiveSection] = useState<string>('home')
     const [isMobile, setIsMobile] = useState(false)
 
-    const [playToggle] = useSound(toggle004Sound, { interrupt: true })
+    const [playToggle] = useSound(toggle001Sound, { interrupt: true })
 
     useEffect(() => {
         const checkMobile = () => setIsMobile(window.innerWidth < 640)
@@ -88,9 +90,6 @@ export default function Dock() {
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
-    // Only show dock on Home page - Moved after all hooks to comply with Rules of Hooks
-    if (pathname !== '/') return null
-
     const navItems: DockItem[] = [
         { icon: Home, label: 'Home', href: '#home' },
         { icon: Briefcase, label: 'Experience', href: '#work' },
@@ -98,7 +97,15 @@ export default function Dock() {
         { icon: Code, label: 'Skills', href: '#skills' },
         { icon: FolderOpen, label: 'Projects', href: '#projects' },
         { icon: Mail, label: 'Contact', href: '#contact' },
-    ]
+    ].map((item) => ({
+        ...item,
+        onClick: (e?: React.MouseEvent) => {
+            if (pathname !== '/') {
+                e?.preventDefault()
+                navigate('/' + item.href)
+            }
+        },
+    }))
 
     const themeItem: DockItem = {
         icon: theme === 'light' ? Moon : Sun,

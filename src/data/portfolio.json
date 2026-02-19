@@ -4,9 +4,9 @@
         "role": "Full Stack Developer",
         "avatar": "https://github.com/sarfarazstark.png",
         "location": "Kolkata, India",
-		"bio": "Full Stack Developer building fast, modern web applications with Next.js or Laravel."
+        "bio": "Full Stack Developer building fast, modern web applications with Next.js or Laravel."
     },
-	"about": "I am a Full Stack Developer who builds standalone, high-performance web applications using either Next.js or Laravel. I specialize in creating complete solutions with these frameworks - from scalable Next.js apps to robust Laravel systems. I focus on writing clean, simple code that is easy to maintain and provides an exceptional experience for users.",
+    "about": "I am a Full Stack Developer who builds standalone, high-performance web applications using either Next.js or Laravel. I specialize in creating complete solutions with these frameworks - from scalable Next.js apps to robust Laravel systems. I focus on writing clean, simple code that is easy to maintain and provides an exceptional experience for users.",
     "experience": [
         {
             "id": "1",
@@ -97,21 +97,21 @@
         },
         {
             "name": "InertiaJS",
-			"icon": "inertiajs"
+            "icon": "inertiajs"
         },
         {
             "name": "Git",
             "icon": "git"
-		},
-		{
-			"name": "Figma",
-			"icon": "figma"
-		}
+        },
+        {
+            "name": "Figma",
+            "icon": "figma"
+        }
     ],
     "projects": [
         {
             "id": "1",
-			"title": "Audiophile",
+            "title": "Audiophile",
             "description": "Demonstrating how Next.js 15 Server Actions can create a lightning-fast, zero-friction shopping experience with absolute type-safety and persistent global state.",
             "tags": ["Full Stack", "Next.js", "TypeScript"],
             "techStack": [
@@ -122,13 +122,13 @@
                 "Zustand"
             ],
             "links": {
-				"github": "https://github.com/sarfarazstark/audiophile",
-				"live": "#"
+                "github": "https://github.com/sarfarazstark/audiophile",
+                "live": "#"
             },
-			"period": "Oct 2024 - Dec 2024",
-			"image": "/audiophile.png",
-			"featured": true,
-			"slug": "audiophile"
+            "period": "Oct 2024 - Dec 2024",
+            "image": "/audiophile.png",
+            "featured": true,
+            "slug": "audiophile"
         },
         {
             "id": "2",
@@ -137,83 +137,75 @@
             "tags": ["Frontend", "React", "JavaScript"],
             "techStack": ["HTML5", "CSS3", "JavaScript", "React.js"],
             "links": {
-				"github": "https://github.com/sarfarazstark/frontendmentor",
-				"live": "#"
+                "github": "https://github.com/sarfarazstark/frontendmentor",
+                "live": "#"
             },
-			"period": "Jan 2024 - Sep 2024",
-			"image": "/frontendmentor.png",
-			"featured": false,
-			"slug": "frontend-mentor-challenges"
+            "period": "Jan 2024 - Sep 2024",
+            "image": "/frontendmentor.png",
+            "featured": false,
+            "slug": "frontend-mentor-challenges"
         },
         {
             "id": "3",
-			"title": "Chatbot",
+            "title": "Chatbot",
             "description": "Exploring LLM integration by building a seamless chat interface using Gemini API, Laravel, and Inertia.js with a focus on real-time feedback loops.",
             "tags": ["AI", "PHP", "React"],
             "techStack": ["Laravel", "InertiaJS", "React.js", "Gemini API"],
             "links": {
-				"github": "https://github.com/sarfarazstark/chatbot",
-				"live": "#"
+                "github": "https://github.com/sarfarazstark/chatbot",
+                "live": "#"
             },
-			"period": "Aug 2024 - Sep 2024",
-			"image": "/chatbot.png",
-			"featured": false,
-			"slug": "chatbot"
+            "period": "Aug 2024 - Sep 2024",
+            "image": "/chatbot.png",
+            "featured": false,
+            "slug": "chatbot"
         },
         {
             "id": "4",
-			"title": "Snapcast",
-			"description": "Full Stack Screen Recording & Video Sharing Platform with user authentication, screen recording, video uploads, AI-generated transcripts, and shareable video links with public/private visibility controls.",
-			"tags": [
-				"Full Stack",
-				"Next.js",
-				"TypeScript"
-			],
-			"techStack": [
-				"Next.js",
-				"TypeScript",
-				"Tailwind CSS",
-				"Drizzle ORM",
-				"Xata",
-				"Bunny.net"
-			],
+            "title": "Snapcast",
+            "description": "Full Stack Screen Recording & Video Sharing Platform with user authentication, screen recording, video uploads, AI-generated transcripts, and shareable video links with public/private visibility controls.",
+            "tags": ["Full Stack", "Next.js", "TypeScript"],
+            "techStack": [
+                "Next.js",
+                "TypeScript",
+                "Tailwind CSS",
+                "Drizzle ORM",
+                "Xata",
+                "Bunny.net"
+            ],
             "links": {
-				"github": "https://github.com/sarfarazstark/snapcast",
-				"live": "#"
+                "github": "https://github.com/sarfarazstark/snapcast",
+                "live": "#"
             },
-			"period": "Nov 2024 - Present",
-			"image": "/snapcast.png",
-			"featured": true,
-			"slug": "snapcast"
+            "period": "Nov 2024 - Present",
+            "image": "/snapcast.png",
+            "featured": true,
+            "slug": "snapcast"
         },
         {
             "id": "5",
-			"title": "Finco",
-			"description": "A full-featured personal finance app with budget management, savings pots, recurring bill tracking, transaction search & filtering, and CRUD operations — all with keyboard-accessible, responsive UI.",
-			"tags": [
-				"Full Stack",
-				"Next.js",
-				"TypeScript"
-			],
-			"techStack": [
-				"Next.js",
-				"TypeScript",
-				"Prisma",
-				"PostgreSQL",
-				"Tailwind CSS"
-			],
+            "title": "Finco",
+            "description": "A full-featured personal finance app with budget management, savings pots, recurring bill tracking, transaction search & filtering, and CRUD operations — all with keyboard-accessible, responsive UI.",
+            "tags": ["Full Stack", "Next.js", "TypeScript"],
+            "techStack": [
+                "Next.js",
+                "TypeScript",
+                "Prisma",
+                "PostgreSQL",
+                "Tailwind CSS"
+            ],
             "links": {
-				"github": "https://github.com/sarfarazstark/finco",
-				"live": "#"
+                "github": "https://github.com/sarfarazstark/finco",
+                "live": "#"
             },
-			"period": "Dec 2024 - Jan 2025",
-			"image": "/finco.png",
-			"featured": true,
-			"slug": "finco"
+            "period": "Dec 2024 - Jan 2025",
+            "image": "/finco.png",
+            "featured": true,
+            "slug": "finco"
         },
         {
             "id": "6",
-			"title": "Invento",
+            "title": "Invento",
             "description": "Full Stack Inventory Management System with real-time tracking and reporting, built to demonstrate CRUD operations and database management in Next.js.",
             "tags": ["Full Stack", "Next.js", "TypeScript"],
             "techStack": [
@@ -223,13 +215,13 @@
                 "PostgreSQL"
             ],
             "links": {
-				"github": "https://github.com/sarfarazstark/invento",
-				"live": "#"
+                "github": "https://github.com/sarfarazstark/invento",
+                "live": "#"
             },
-			"period": "Feb 2025 - Present",
-			"image": "/invento.png",
-			"featured": true,
-			"slug": "invento"
+            "period": "Feb 2025 - Present",
+            "image": "/invento.png",
+            "featured": true,
+            "slug": "invento"
         }
     ],
     "footer": {
