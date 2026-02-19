@@ -4,9 +4,9 @@
         "role": "Full Stack Developer",
         "avatar": "https://github.com/sarfarazstark.png",
         "location": "Kolkata, India",
-        "bio": "Full Stack Developer building scalable web applications with Laravel and Next.js."
+		"bio": "Full Stack Developer building fast, modern web applications with Next.js or Laravel."
     },
-    "about": "I specialize in clean architecture and performant web solutions. Focused on Laravel, Next.js, and delivering high-quality user experiences.",
+	"about": "I am a Full Stack Developer who builds standalone, high-performance web applications using either Next.js or Laravel. I specialize in creating complete solutions with these frameworks - from scalable Next.js apps to robust Laravel systems. I focus on writing clean, simple code that is easy to maintain and provides an exceptional experience for users.",
     "experience": [
         {
             "id": "1",
@@ -118,9 +118,10 @@
                 "Zustand"
             ],
             "links": {
-                "github": "https://github.com/sarfarazstark/audiophile"
+				"github": "https://github.com/sarfarazstark/audiophile",
+				"live": "#"
             },
-            "image": "/audiophile.gif"
+			"image": "/audiophile.png"
         },
         {
             "id": "2",
@@ -129,9 +130,10 @@
             "tags": ["Frontend", "React", "JavaScript"],
             "techStack": ["HTML5", "CSS3", "JavaScript", "React.js"],
             "links": {
-                "github": "https://github.com/sarfarazstark/frontendmentor"
+				"github": "https://github.com/sarfarazstark/frontendmentor",
+				"live": "#"
             },
-            "image": "https://placehold.co/600x400?text=Frontend+Mentor"
+			"image": "/frontendmentor.png"
         },
         {
             "id": "3",
@@ -140,31 +142,55 @@
             "tags": ["AI", "PHP", "React"],
             "techStack": ["Laravel", "InertiaJS", "React.js", "Gemini API"],
             "links": {
-                "github": "https://github.com/sarfarazstark/chatbot"
+				"github": "https://github.com/sarfarazstark/chatbot",
+				"live": "#"
             },
-            "image": "https://placehold.co/600x400?text=AI+Chatbot"
+			"image": "/chatbot.png"
         },
         {
             "id": "4",
-            "title": "50 Projects In JS",
-            "description": "50 Mini Web Projects using Vanilla HTML, CSS & JavaScript to understand core fundamentals through hands-on experimentation.",
-            "tags": ["Frontend", "JavaScript"],
-            "techStack": ["HTML5", "CSS3", "JavaScript"],
+			"title": "Snapcast - Screen Recording & Video Sharing",
+			"description": "Full Stack Screen Recording & Video Sharing Platform with user authentication, screen recording, video uploads, AI-generated transcripts, and shareable video links with public/private visibility controls.",
+			"tags": [
+				"Full Stack",
+				"Next.js",
+				"TypeScript"
+			],
+			"techStack": [
+				"Next.js",
+				"TypeScript",
+				"Tailwind CSS",
+				"Drizzle ORM",
+				"Xata",
+				"Bunny.net"
+			],
             "links": {
-                "github": "https://github.com/sarfarazstark/50-Projects-In-Javascript"
+				"github": "https://github.com/sarfarazstark/snapcast",
+				"live": "#"
             },
-            "image": "https://placehold.co/600x400?text=50+JS+Projects"
+			"image": "/snapcast.png"
         },
         {
             "id": "5",
-            "title": "Nuskha - Recipe App",
-            "description": "Recipe web app using the Forkify API to search, view, modify, and bookmark recipes with a focus on API integration and state management.",
-            "tags": ["Frontend", "JavaScript"],
-            "techStack": ["JavaScript", "Forkify API", "CSS3"],
+			"title": "Finco - Personal Finance App",
+			"description": "A full-featured personal finance app with budget management, savings pots, recurring bill tracking, transaction search & filtering, and CRUD operations — all with keyboard-accessible, responsive UI.",
+			"tags": [
+				"Full Stack",
+				"Next.js",
+				"TypeScript"
+			],
+			"techStack": [
+				"Next.js",
+				"TypeScript",
+				"Prisma",
+				"PostgreSQL",
+				"Tailwind CSS"
+			],
             "links": {
-                "github": "https://github.com/sarfarazstark/nuskha"
+				"github": "https://github.com/sarfarazstark/finco",
+				"live": "#"
             },
-            "image": "https://placehold.co/600x400?text=Nuskha+Recipes"
+			"image": "/finco.png"
         },
         {
             "id": "6",
@@ -178,9 +204,10 @@
                 "PostgreSQL"
             ],
             "links": {
-                "github": "https://github.com/sarfarazstark/invento"
+				"github": "https://github.com/sarfarazstark/invento",
+				"live": "#"
             },
-            "image": "https://placehold.co/600x400?text=Invento+CMS"
+			"image": "/invento.png"
         }
     ],
     "footer": {

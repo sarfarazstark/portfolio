@@ -42,7 +42,7 @@ const Footer = ({ footer }: { footer: FooterType }) => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="mx-auto max-w-[500px] text-muted-foreground text-sm leading-relaxed"
+                        className="mx-auto max-w-125 text-muted-foreground text-sm leading-relaxed"
                     >
                         Want to chat? Just shoot me an email at
                         itssarfarazstark@gmail.com and I'll respond whenever I

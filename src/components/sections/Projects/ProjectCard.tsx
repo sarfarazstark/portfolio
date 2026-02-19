@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import type { Project } from '@/types/portfolio'
-import { Github, Globe } from 'lucide-react'
+import { Github, ArrowUpRight } from 'lucide-react'
 
 interface ProjectCardProps {
     project: Project
@@ -23,6 +23,28 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
+                <div className="absolute top-2 right-2 flex items-center gap-1.5">
+                    {project.links.github && (
+                        <a
+                            href={project.links.github}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center justify-center size-8 rounded-full bg-background/80 backdrop-blur-sm text-muted-foreground hover:text-foreground transition-colors"
+                        >
+                            <Github size={14} />
+                        </a>
+                    )}
+                    {project.links.live && (
+                        <a
+                            href={project.links.live}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center justify-center size-8 rounded-full bg-background/80 backdrop-blur-sm text-muted-foreground hover:text-foreground transition-colors"
+                        >
+                            <ArrowUpRight size={14} />
+                        </a>
+                    )}
+                </div>
             </div>
             <div className="flex flex-1 flex-col p-4">
                 <div className="space-y-1">
@@ -34,7 +56,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                     </p>
                 </div>
                 <div className="mt-auto pt-4">
-                    <div className="flex flex-wrap gap-1 mb-4">
+                    <div className="flex flex-wrap gap-1">
                         {project.techStack.map((tech) => (
                             <span
                                 key={tech}
@@ -43,30 +65,6 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                                 {tech}
                             </span>
                         ))}
-                    </div>
-                    <div className="flex items-center gap-3">
-                        {project.links.github && (
-                            <a
-                                href={project.links.github}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
-                            >
-                                <Github size={14} />
-                                Source
-                            </a>
-                        )}
-                        {project.links.live && (
-                            <a
-                                href={project.links.live}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
-                            >
-                                <Globe size={14} />
-                                Live
-                            </a>
-                        )}
                     </div>
                 </div>
             </div>
