@@ -64,7 +64,7 @@ export default function Dock() {
         return () => observer.disconnect()
     }, [])
 
-    const items: DockItem[] = [
+    const navItems: DockItem[] = [
         { icon: Home, label: 'Home', href: '#home' },
         { icon: User, label: 'About', href: '#about' },
         { icon: Briefcase, label: 'Work', href: '#work' },
@@ -72,16 +72,17 @@ export default function Dock() {
         { icon: Code2, label: 'Skills', href: '#skills' },
         { icon: FolderKanban, label: 'Projects', href: '#projects' },
         { icon: MessageSquare, label: 'Contact', href: '#contact' },
-        {
-            icon: theme === 'light' ? Moon : Sun,
-            label: 'Toggle Theme',
-            href: '#',
-            onClick: (e) => {
-                e?.preventDefault()
-                toggleTheme()
-            },
-        },
     ]
+
+    const themeItem: DockItem = {
+        icon: theme === 'light' ? Moon : Sun,
+        label: 'Toggle Theme',
+        href: '#',
+        onClick: (e) => {
+            e?.preventDefault()
+            toggleTheme()
+        },
+    }
 
     return (
         <motion.div
@@ -96,7 +97,7 @@ export default function Dock() {
                 role="navigation"
                 aria-label="Main navigation"
             >
-                {items.map((item) => (
+                {navItems.map((item) => (
                     <IconContainer
                         mouseX={mouseX}
                         key={item.label}
@@ -104,6 +105,13 @@ export default function Dock() {
                         {...item}
                     />
                 ))}
+                <div className="h-8 w-px bg-border mb-2" />
+                <IconContainer
+                    mouseX={mouseX}
+                    key={themeItem.label}
+                    active={false}
+                    {...themeItem}
+                />
             </nav>
         </motion.div>
     )

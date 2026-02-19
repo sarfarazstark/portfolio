@@ -30,9 +30,9 @@ function App() {
                 className="absolute inset-0 z-0 pointer-events-none"
                 style={{
                     backgroundImage: `
-            linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
-            linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px)
-          `,
+						linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+						linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px)
+					`,
                     backgroundSize: '20px 20px',
                     WebkitMaskImage:
                         'linear-gradient(to bottom, #000 0%, transparent 300px)',
@@ -41,7 +41,7 @@ function App() {
                 }}
             />
 
-            <main className="relative z-10 max-w-2xl mx-auto px-6 py-12 md:py-24 space-y-24">
+            <main className="relative z-10 max-w-xl mx-auto px-6 py-12 md:py-24 space-y-24">
                 <Hero profile={data.profile} />
                 <About content={data.about} />
                 <Experience experiences={data.experience} />

@@ -107,7 +107,7 @@
     "projects": [
         {
             "id": "1",
-            "title": "Audiophile - Modern E-commerce",
+			"title": "Audiophile",
             "description": "Demonstrating how Next.js 15 Server Actions can create a lightning-fast, zero-friction shopping experience with absolute type-safety and persistent global state.",
             "tags": ["Full Stack", "Next.js", "TypeScript"],
             "techStack": [
@@ -121,6 +121,7 @@
 				"github": "https://github.com/sarfarazstark/audiophile",
 				"live": "#"
             },
+			"period": "Oct 2024 - Dec 2024",
 			"image": "/audiophile.png"
         },
         {
@@ -133,11 +134,12 @@
 				"github": "https://github.com/sarfarazstark/frontendmentor",
 				"live": "#"
             },
+			"period": "Jan 2024 - Sep 2024",
 			"image": "/frontendmentor.png"
         },
         {
             "id": "3",
-            "title": "AI-Powered Chatbot",
+			"title": "Chatbot",
             "description": "Exploring LLM integration by building a seamless chat interface using Gemini API, Laravel, and Inertia.js with a focus on real-time feedback loops.",
             "tags": ["AI", "PHP", "React"],
             "techStack": ["Laravel", "InertiaJS", "React.js", "Gemini API"],
@@ -145,11 +147,12 @@
 				"github": "https://github.com/sarfarazstark/chatbot",
 				"live": "#"
             },
+			"period": "Aug 2024 - Sep 2024",
 			"image": "/chatbot.png"
         },
         {
             "id": "4",
-			"title": "Snapcast - Screen Recording & Video Sharing",
+			"title": "Snapcast",
 			"description": "Full Stack Screen Recording & Video Sharing Platform with user authentication, screen recording, video uploads, AI-generated transcripts, and shareable video links with public/private visibility controls.",
 			"tags": [
 				"Full Stack",
@@ -168,11 +171,12 @@
 				"github": "https://github.com/sarfarazstark/snapcast",
 				"live": "#"
             },
+			"period": "Nov 2024 - Present",
 			"image": "/snapcast.png"
         },
         {
             "id": "5",
-			"title": "Finco - Personal Finance App",
+			"title": "Finco",
 			"description": "A full-featured personal finance app with budget management, savings pots, recurring bill tracking, transaction search & filtering, and CRUD operations — all with keyboard-accessible, responsive UI.",
 			"tags": [
 				"Full Stack",
@@ -190,11 +194,12 @@
 				"github": "https://github.com/sarfarazstark/finco",
 				"live": "#"
             },
+			"period": "Dec 2024 - Jan 2025",
 			"image": "/finco.png"
         },
         {
             "id": "6",
-            "title": "Invento - Inventory CMS",
+			"title": "Invento",
             "description": "Full Stack Inventory Management System with real-time tracking and reporting, built to demonstrate CRUD operations and database management in Next.js.",
             "tags": ["Full Stack", "Next.js", "TypeScript"],
             "techStack": [
@@ -207,6 +212,7 @@
 				"github": "https://github.com/sarfarazstark/invento",
 				"live": "#"
             },
+			"period": "Feb 2025 - Present",
 			"image": "/invento.png"
         }
     ],

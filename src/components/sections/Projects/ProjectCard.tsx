@@ -48,19 +48,26 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             </div>
             <div className="flex flex-1 flex-col p-4">
                 <div className="space-y-1">
-                    <h3 className="font-semibold tracking-tight text-base">
-                        {project.title}
-                    </h3>
-                    <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">
+                    <div className="flex items-center justify-between">
+                        <h3 className="font-bold tracking-tight text-base">
+                            {project.title}
+                        </h3>
+                    </div>
+                    {project.period && (
+                        <p className="text-[11px] font-medium text-muted-foreground">
+                            {project.period}
+                        </p>
+                    )}
+                    <p className="text-[12px] text-muted-foreground line-clamp-4 leading-relaxed pt-1">
                         {project.description}
                     </p>
                 </div>
                 <div className="mt-auto pt-4">
-                    <div className="flex flex-wrap gap-1">
+                    <div className="flex flex-wrap gap-1.5">
                         {project.techStack.map((tech) => (
                             <span
                                 key={tech}
-                                className="inline-flex items-center rounded-md bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground"
+                                className="inline-flex items-center rounded-full bg-muted border border-border px-2 py-0.5 text-[10px] font-medium text-muted-foreground"
                             >
                                 {tech}
                             </span>

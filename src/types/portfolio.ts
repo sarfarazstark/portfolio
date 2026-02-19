@@ -33,6 +33,7 @@ export interface Project {
         live?: string
         github?: string
     }
+    period?: string
     image: string
 }
 

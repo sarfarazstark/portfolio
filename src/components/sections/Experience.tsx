@@ -46,11 +46,11 @@ const Experience = ({ experiences }: { experiences: ExperienceType[] }) => {
                             </div>
                             <div className="flex flex-1 flex-col justify-center">
                                 <div className="flex items-center justify-between">
-                                    <h3 className="text-sm font-bold leading-tight">
+                                    <h3 className="text-xs font-bold leading-tight">
                                         {exp.company}
                                     </h3>
                                     <div className="flex items-center gap-2">
-                                        <span className="text-xs text-muted-foreground tabular-nums">
+                                        <span className="text-[10px] text-muted-foreground tabular-nums">
                                             {exp.period}
                                         </span>
                                         <ChevronDown
@@ -62,7 +62,7 @@ const Experience = ({ experiences }: { experiences: ExperienceType[] }) => {
                                         />
                                     </div>
                                 </div>
-                                <p className="text-sm font-medium leading-tight text-muted-foreground/90">
+                                <p className="text-xs font-medium leading-tight text-muted-foreground/90">
                                     {exp.role}
                                 </p>
                                 <AnimatePresence initial={false}>
@@ -89,7 +89,7 @@ const Experience = ({ experiences }: { experiences: ExperienceType[] }) => {
                                             }}
                                             className="overflow-hidden"
                                         >
-                                            <p className="text-sm text-muted-foreground leading-relaxed pt-1">
+                                            <p className="text-xs text-muted-foreground leading-relaxed pt-1">
                                                 {exp.description}
                                             </p>
                                         </motion.div>

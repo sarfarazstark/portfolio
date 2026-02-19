@@ -32,14 +32,14 @@ const Education = ({ education }: { education: EducationType[] }) => {
                         </div>
                         <div className="flex flex-1 flex-col justify-center">
                             <div className="flex items-center justify-between">
-                                <h3 className="text-sm font-bold leading-tight">
+                                <h3 className="text-xs font-bold leading-tight">
                                     {edu.school}
                                 </h3>
                                 <span className="text-xs text-muted-foreground tabular-nums">
                                     {edu.period}
                                 </span>
                             </div>
-                            <p className="text-sm font-medium leading-tight text-muted-foreground/90">
+                            <p className="text-xs font-medium leading-tight text-muted-foreground/90">
                                 {edu.degree}
                             </p>
                         </div>
