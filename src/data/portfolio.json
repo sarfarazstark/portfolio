@@ -1,242 +1,202 @@
 {
-	"profile": {
-		"name": "Sarfaraz",
-		"role": "Full Stack Developer",
-		"avatar": "https://github.com/sarfarazstark.png",
-		"location": "Kolkata, India",
-		"bio": "Full Stack Developer building scalable web applications with Laravel and Next.js."
-	},
-	"about": "I specialize in clean architecture and performant web solutions. Focused on Laravel, Next.js, and delivering high-quality user experiences.",
-	"experience": [
-		{
-			"id": "1",
-			"company": "AOF Engineering System",
-			"role": "Full Stack Developer",
-			"period": "Aug 2025 - Present",
-			"description": "Architecting full-stack solutions with a focus on modularity. Currently reducing development overhead by implementing a shared component library across Laravel and React projects for high-performance enterprise applications.",
-			"logo": "/aofenggsys_logo.jpg"
-		},
-		{
-			"id": "2",
-			"company": "Fassalkart",
-			"role": "Full Stack Developer",
-			"period": "Sep 2024 - Aug 2025",
-			"description": "Led the ground-up development of a multi-vendor marketplace. Engineered a robust PostgreSQL schema that handled complex product variations without performance degradation and streamlined deployment using optimized Docker configurations.",
-			"logo": "/fassalkart_logo.jpg"
-		},
-		{
-			"id": "3",
-			"company": "GDSC MAKAUT",
-			"role": "Web Developer",
-			"period": "Oct 2023 - Sep 2024",
-			"description": "Designed and launched the official club website as a central hub for event details and resources. Developed internal automation tools to manage event registrations, significantly reducing manual data entry for the core team.",
-			"logo": "/dscmakaut_logo.jpg"
-		}
-	],
-	"education": [
-		{
-			"id": "1",
-			"school": "Maulana Abul Kalam Azad University of Technology",
-			"degree": "Bachelor of Computer Application",
-			"period": "2022 - 2025",
-			"logo": "/wbut.jpg"
-		}
-	],
-	"skills": [
-		{
-			"name": "Next.js",
-			"icon": "nextjs"
-		},
-		{
-			"name": "React.js",
-			"icon": "react"
-		},
-		{
-			"name": "Node.js",
-			"icon": "nodejs"
-		},
-		{
-			"name": "Laravel",
-			"icon": "laravel"
-		},
-		{
-			"name": "React Native",
-			"icon": "react"
-		},
-		{
-			"name": "Tailwind CSS",
-			"icon": "tailwindcss"
-		},
-		{
-			"name": "PostgreSQL",
-			"icon": "postgresql"
-		},
-		{
-			"name": "MongoDB",
-			"icon": "mongodb"
-		},
-		{
-			"name": "Docker",
-			"icon": "docker"
-		},
-		{
-			"name": "TypeScript",
-			"icon": "typescript"
-		},
-		{
-			"name": "JavaScript",
-			"icon": "javascript"
-		},
-		{
-			"name": "PHP",
-			"icon": "php"
-		},
-		{
-			"name": "SQL",
-			"icon": "mysql"
-		},
-		{
-			"name": "InertiaJS",
-			"icon": "laravel"
-		},
-		{
-			"name": "Git",
-			"icon": "git"
-		}
-	],
-	"projects": [
-		{
-			"id": "1",
-			"title": "Audiophile - Modern E-commerce",
-			"description": "Demonstrating how Next.js 15 Server Actions can create a lightning-fast, zero-friction shopping experience with absolute type-safety and persistent global state.",
-			"tags": [
-				"Full Stack",
-				"Next.js",
-				"TypeScript"
-			],
-			"techStack": [
-				"Next.js 15",
-				"TypeScript",
-				"PostgreSQL",
-				"Prisma",
-				"Zustand"
-			],
-			"links": {
-				"github": "https://github.com/sarfarazstark/audiophile"
-			},
-			"image": "https://raw.githubusercontent.com/sarfarazstark/audiophile/main/public/preview.png"
-		},
-		{
-			"id": "2",
-			"title": "Frontend Mentor Challenges",
-			"description": "A curated collection of 30+ responsive and accessible web solutions, focusing on translating complex design systems into production-ready frontend code.",
-			"tags": [
-				"Frontend",
-				"React",
-				"JavaScript"
-			],
-			"techStack": [
-				"HTML5",
-				"CSS3",
-				"JavaScript",
-				"React.js"
-			],
-			"links": {
-				"github": "https://github.com/sarfarazstark/frontendmentor"
-			},
-			"image": "https://placehold.co/600x400?text=Frontend+Mentor"
-		},
-		{
-			"id": "3",
-			"title": "AI-Powered Chatbot",
-			"description": "Exploring LLM integration by building a seamless chat interface using Gemini API, Laravel, and Inertia.js with a focus on real-time feedback loops.",
-			"tags": [
-				"AI",
-				"PHP",
-				"React"
-			],
-			"techStack": [
-				"Laravel",
-				"InertiaJS",
-				"React.js",
-				"Gemini API"
-			],
-			"links": {
-				"github": "https://github.com/sarfarazstark/chatbot"
-			},
-			"image": "https://placehold.co/600x400?text=AI+Chatbot"
-		},
-		{
-			"id": "4",
-			"title": "50 Projects In JS",
-			"description": "50 Mini Web Projects using Vanilla HTML, CSS & JavaScript to understand core fundamentals through hands-on experimentation.",
-			"tags": [
-				"Frontend",
-				"JavaScript"
-			],
-			"techStack": [
-				"HTML5",
-				"CSS3",
-				"JavaScript"
-			],
-			"links": {
-				"github": "https://github.com/sarfarazstark/50-Projects-In-Javascript"
-			},
-			"image": "https://placehold.co/600x400?text=50+JS+Projects"
-		},
-		{
-			"id": "5",
-			"title": "Nuskha - Recipe App",
-			"description": "Recipe web app using the Forkify API to search, view, modify, and bookmark recipes with a focus on API integration and state management.",
-			"tags": [
-				"Frontend",
-				"JavaScript"
-			],
-			"techStack": [
-				"JavaScript",
-				"Forkify API",
-				"CSS3"
-			],
-			"links": {
-				"github": "https://github.com/sarfarazstark/nuskha"
-			},
-			"image": "https://placehold.co/600x400?text=Nuskha+Recipes"
-		},
-		{
-			"id": "6",
-			"title": "Invento - Inventory CMS",
-			"description": "Full Stack Inventory Management System with real-time tracking and reporting, built to demonstrate CRUD operations and database management in Next.js.",
-			"tags": [
-				"Full Stack",
-				"Next.js",
-				"TypeScript"
-			],
-			"techStack": [
-				"Next.js",
-				"TypeScript",
-				"Tailwind CSS",
-				"PostgreSQL"
-			],
-			"links": {
-				"github": "https://github.com/sarfarazstark/invento"
-			},
-			"image": "https://placehold.co/600x400?text=Invento+CMS"
-		}
-	],
-	"footer": {
-		"socials": [
-			{
-				"platform": "GitHub",
-				"url": "https://github.com/sarfarazstark"
-			},
-			{
-				"platform": "LinkedIn",
-				"url": "https://linkedin.com/in/sarfarazstark"
-			},
-			{
-				"platform": "Email",
-				"url": "itssarfarazstark@gmail.com"
-			}
-		]
-	}
+    "profile": {
+        "name": "Sarfaraz",
+        "role": "Full Stack Developer",
+        "avatar": "https://github.com/sarfarazstark.png",
+        "location": "Kolkata, India",
+        "bio": "Full Stack Developer building scalable web applications with Laravel and Next.js."
+    },
+    "about": "I specialize in clean architecture and performant web solutions. Focused on Laravel, Next.js, and delivering high-quality user experiences.",
+    "experience": [
+        {
+            "id": "1",
+            "company": "AOF Engineering System",
+            "role": "Full Stack Developer",
+            "period": "Aug 2025 - Present",
+            "description": "Architecting full-stack solutions with a focus on modularity. Currently reducing development overhead by implementing a shared component library across Laravel and React projects for high-performance enterprise applications.",
+            "logo": "/aofenggsys_logo.jpg"
+        },
+        {
+            "id": "2",
+            "company": "Fassalkart",
+            "role": "Full Stack Developer",
+            "period": "Sep 2024 - Aug 2025",
+            "description": "Led the ground-up development of a multi-vendor marketplace. Engineered a robust PostgreSQL schema that handled complex product variations without performance degradation and streamlined deployment using optimized Docker configurations.",
+            "logo": "/fassalkart_logo.jpg"
+        },
+        {
+            "id": "3",
+            "company": "GDSC MAKAUT",
+            "role": "Web Developer",
+            "period": "Oct 2023 - Sep 2024",
+            "description": "Designed and launched the official club website as a central hub for event details and resources. Developed internal automation tools to manage event registrations, significantly reducing manual data entry for the core team.",
+            "logo": "/dscmakaut_logo.jpg"
+        }
+    ],
+    "education": [
+        {
+            "id": "1",
+            "school": "Maulana Abul Kalam Azad University of Technology",
+            "degree": "Bachelor of Computer Application",
+            "period": "2022 - 2025",
+            "logo": "/wbut.jpg"
+        }
+    ],
+    "skills": [
+        {
+            "name": "Next.js",
+            "icon": "nextjs"
+        },
+        {
+            "name": "React.js",
+            "icon": "react"
+        },
+        {
+            "name": "Node.js",
+            "icon": "nodejs"
+        },
+        {
+            "name": "Laravel",
+            "icon": "laravel"
+        },
+        {
+            "name": "React Native",
+            "icon": "react"
+        },
+        {
+            "name": "Tailwind CSS",
+            "icon": "tailwindcss"
+        },
+        {
+            "name": "PostgreSQL",
+            "icon": "postgresql"
+        },
+        {
+            "name": "MongoDB",
+            "icon": "mongodb"
+        },
+        {
+            "name": "Docker",
+            "icon": "docker"
+        },
+        {
+            "name": "TypeScript",
+            "icon": "typescript"
+        },
+        {
+            "name": "JavaScript",
+            "icon": "javascript"
+        },
+        {
+            "name": "PHP",
+            "icon": "php"
+        },
+        {
+            "name": "SQL",
+            "icon": "mysql"
+        },
+        {
+            "name": "InertiaJS",
+            "icon": "laravel"
+        },
+        {
+            "name": "Git",
+            "icon": "git"
+        }
+    ],
+    "projects": [
+        {
+            "id": "1",
+            "title": "Audiophile - Modern E-commerce",
+            "description": "Demonstrating how Next.js 15 Server Actions can create a lightning-fast, zero-friction shopping experience with absolute type-safety and persistent global state.",
+            "tags": ["Full Stack", "Next.js", "TypeScript"],
+            "techStack": [
+                "Next.js 15",
+                "TypeScript",
+                "PostgreSQL",
+                "Prisma",
+                "Zustand"
+            ],
+            "links": {
+                "github": "https://github.com/sarfarazstark/audiophile"
+            },
+            "image": "/audiophile.gif"
+        },
+        {
+            "id": "2",
+            "title": "Frontend Mentor Challenges",
+            "description": "A curated collection of 30+ responsive and accessible web solutions, focusing on translating complex design systems into production-ready frontend code.",
+            "tags": ["Frontend", "React", "JavaScript"],
+            "techStack": ["HTML5", "CSS3", "JavaScript", "React.js"],
+            "links": {
+                "github": "https://github.com/sarfarazstark/frontendmentor"
+            },
+            "image": "https://placehold.co/600x400?text=Frontend+Mentor"
+        },
+        {
+            "id": "3",
+            "title": "AI-Powered Chatbot",
+            "description": "Exploring LLM integration by building a seamless chat interface using Gemini API, Laravel, and Inertia.js with a focus on real-time feedback loops.",
+            "tags": ["AI", "PHP", "React"],
+            "techStack": ["Laravel", "InertiaJS", "React.js", "Gemini API"],
+            "links": {
+                "github": "https://github.com/sarfarazstark/chatbot"
+            },
+            "image": "https://placehold.co/600x400?text=AI+Chatbot"
+        },
+        {
+            "id": "4",
+            "title": "50 Projects In JS",
+            "description": "50 Mini Web Projects using Vanilla HTML, CSS & JavaScript to understand core fundamentals through hands-on experimentation.",
+            "tags": ["Frontend", "JavaScript"],
+            "techStack": ["HTML5", "CSS3", "JavaScript"],
+            "links": {
+                "github": "https://github.com/sarfarazstark/50-Projects-In-Javascript"
+            },
+            "image": "https://placehold.co/600x400?text=50+JS+Projects"
+        },
+        {
+            "id": "5",
+            "title": "Nuskha - Recipe App",
+            "description": "Recipe web app using the Forkify API to search, view, modify, and bookmark recipes with a focus on API integration and state management.",
+            "tags": ["Frontend", "JavaScript"],
+            "techStack": ["JavaScript", "Forkify API", "CSS3"],
+            "links": {
+                "github": "https://github.com/sarfarazstark/nuskha"
+            },
+            "image": "https://placehold.co/600x400?text=Nuskha+Recipes"
+        },
+        {
+            "id": "6",
+            "title": "Invento - Inventory CMS",
+            "description": "Full Stack Inventory Management System with real-time tracking and reporting, built to demonstrate CRUD operations and database management in Next.js.",
+            "tags": ["Full Stack", "Next.js", "TypeScript"],
+            "techStack": [
+                "Next.js",
+                "TypeScript",
+                "Tailwind CSS",
+                "PostgreSQL"
+            ],
+            "links": {
+                "github": "https://github.com/sarfarazstark/invento"
+            },
+            "image": "https://placehold.co/600x400?text=Invento+CMS"
+        }
+    ],
+    "footer": {
+        "socials": [
+            {
+                "platform": "GitHub",
+                "url": "https://github.com/sarfarazstark"
+            },
+            {
+                "platform": "LinkedIn",
+                "url": "https://linkedin.com/in/sarfarazstark"
+            },
+            {
+                "platform": "Email",
+                "url": "itssarfarazstark@gmail.com"
+            }
+        ]
+    }
 }
