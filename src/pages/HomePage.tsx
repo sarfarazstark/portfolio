@@ -16,7 +16,7 @@ export default function HomePage() {
             <Experience experiences={data.experience} />
             <Education education={data.education} />
             <Skills skills={data.skills} />
-            <Projects projects={data.projects} limit={4} />
+            <Projects projects={data.projects} />
             <Footer footer={data.footer} />
         </main>
     )

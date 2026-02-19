@@ -9,6 +9,7 @@ import { useTheme } from '@/hooks/useTheme'
 import Dock from '@/components/dock/Dock'
 import HomePage from '@/pages/HomePage'
 import ProjectsPage from '@/pages/ProjectsPage'
+import ProjectDetailPage from '@/pages/ProjectDetailPage'
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -52,6 +53,10 @@ function App() {
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/projects" element={<ProjectsPage />} />
+                    <Route
+                        path="/project/:slug"
+                        element={<ProjectDetailPage />}
+                    />
                 </Routes>
 
                 <Dock />

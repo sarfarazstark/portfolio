@@ -35,6 +35,8 @@ export interface Project {
     }
     period?: string
     image: string
+    featured: boolean
+    slug: string
 }
 
 export interface Social {

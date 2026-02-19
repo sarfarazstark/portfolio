@@ -126,7 +126,9 @@
 				"live": "#"
             },
 			"period": "Oct 2024 - Dec 2024",
-			"image": "/audiophile.png"
+			"image": "/audiophile.png",
+			"featured": true,
+			"slug": "audiophile"
         },
         {
             "id": "2",
@@ -139,7 +141,9 @@
 				"live": "#"
             },
 			"period": "Jan 2024 - Sep 2024",
-			"image": "/frontendmentor.png"
+			"image": "/frontendmentor.png",
+			"featured": false,
+			"slug": "frontend-mentor-challenges"
         },
         {
             "id": "3",
@@ -152,7 +156,9 @@
 				"live": "#"
             },
 			"period": "Aug 2024 - Sep 2024",
-			"image": "/chatbot.png"
+			"image": "/chatbot.png",
+			"featured": false,
+			"slug": "chatbot"
         },
         {
             "id": "4",
@@ -176,7 +182,9 @@
 				"live": "#"
             },
 			"period": "Nov 2024 - Present",
-			"image": "/snapcast.png"
+			"image": "/snapcast.png",
+			"featured": true,
+			"slug": "snapcast"
         },
         {
             "id": "5",
@@ -199,7 +207,9 @@
 				"live": "#"
             },
 			"period": "Dec 2024 - Jan 2025",
-			"image": "/finco.png"
+			"image": "/finco.png",
+			"featured": true,
+			"slug": "finco"
         },
         {
             "id": "6",
@@ -217,7 +227,9 @@
 				"live": "#"
             },
 			"period": "Feb 2025 - Present",
-			"image": "/invento.png"
+			"image": "/invento.png",
+			"featured": true,
+			"slug": "invento"
         }
     ],
     "footer": {
