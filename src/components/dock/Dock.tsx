@@ -76,7 +76,7 @@ export default function Dock() {
 
     const themeItem: DockItem = {
         icon: theme === 'light' ? Moon : Sun,
-        label: 'Toggle Theme',
+        label: 'Theme',
         href: '#',
         onClick: (e) => {
             e?.preventDefault()
