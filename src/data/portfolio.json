@@ -125,7 +125,7 @@
                 "github": "https://github.com/sarfarazstark/audiophile",
                 "live": "#"
             },
-            "period": "Oct 2024 - Dec 2024",
+			"period": "Dec 6, 2025 - Jan 27, 2026",
             "image": "/audiophile.png",
             "featured": true,
             "slug": "audiophile"
@@ -140,7 +140,7 @@
                 "github": "https://github.com/sarfarazstark/frontendmentor",
                 "live": "#"
             },
-            "period": "Jan 2024 - Sep 2024",
+			"period": "19 July 2022 - Present",
             "image": "/frontendmentor.png",
             "featured": false,
             "slug": "frontend-mentor-challenges"
@@ -155,7 +155,7 @@
                 "github": "https://github.com/sarfarazstark/chatbot",
                 "live": "#"
             },
-            "period": "Aug 2024 - Sep 2024",
+			"period": "Dec 31, 2024 - Jan 12, 2025",
             "image": "/chatbot.png",
             "featured": false,
             "slug": "chatbot"
@@ -177,7 +177,7 @@
                 "github": "https://github.com/sarfarazstark/snapcast",
                 "live": "#"
             },
-            "period": "Nov 2024 - Present",
+			"period": "Apr 20, 2025 - May 24, 2025",
             "image": "/snapcast.png",
             "featured": true,
             "slug": "snapcast"
@@ -198,7 +198,7 @@
                 "github": "https://github.com/sarfarazstark/finco",
                 "live": "#"
             },
-            "period": "Dec 2024 - Jan 2025",
+			"period": "Dec 18, 2025 - Paused",
             "image": "/finco.png",
             "featured": true,
             "slug": "finco"
@@ -218,7 +218,7 @@
                 "github": "https://github.com/sarfarazstark/invento",
                 "live": "#"
             },
-            "period": "Feb 2025 - Present",
+			"period": "Oct 14, 2025 - Oct 15, 2025",
             "image": "/invento.png",
             "featured": true,
             "slug": "invento"
