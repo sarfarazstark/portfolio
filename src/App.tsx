@@ -9,6 +9,7 @@ import { useTheme } from '@/hooks/useTheme'
 import Dock from '@/components/dock/Dock'
 import HomePage from '@/pages/HomePage'
 import ProjectsPage from '@/pages/ProjectsPage'
+import Redirect from '@/components/ui/Redirect'
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -52,6 +53,12 @@ function App() {
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/projects" element={<ProjectsPage />} />
+                    <Route
+                        path="/frontendmentor"
+                        element={
+                            <Redirect url="https://sarfarazfrontendmentor.netlify.app" />
+                        }
+                    />
                 </Routes>
 
                 <Dock />
