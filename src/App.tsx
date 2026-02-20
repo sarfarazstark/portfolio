@@ -56,7 +56,7 @@ function App() {
                     <Route
                         path="/frontendmentor"
                         element={
-                            <Redirect url="https://sarfarazfrontendmentor.netlify.app" />
+                            <Redirect url="https://sarfaraz-fm.netlify.app" />
                         }
                     />
                 </Routes>
