@@ -123,7 +123,7 @@
             ],
             "links": {
                 "github": "https://github.com/sarfarazstark/audiophile",
-                "live": "#"
+				"live": "https://audiophile-eight-cyan.vercel.app/"
             },
 			"period": "Dec 6, 2025 - Jan 27, 2026",
             "image": "/audiophile.png",
@@ -138,7 +138,7 @@
             "techStack": ["HTML5", "CSS3", "JavaScript", "React.js"],
             "links": {
                 "github": "https://github.com/sarfarazstark/frontendmentor",
-                "live": "#"
+				"live": "https://fm.sarfaraz.is-a.dev"
             },
 			"period": "19 July 2022 - Present",
             "image": "/frontendmentor.png",
@@ -196,7 +196,7 @@
             ],
             "links": {
                 "github": "https://github.com/sarfarazstark/finco",
-                "live": "#"
+				"live": "https://finco-beige.vercel.app/"
             },
 			"period": "Dec 18, 2025 - Paused",
             "image": "/finco.png",
