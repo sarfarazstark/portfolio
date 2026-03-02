@@ -1,10 +1,10 @@
-# DevHub Portfolio
+# My Portfolio
 
 A high-fidelity, pixel-perfect portfolio application built with **React 19** and **TypeScript**, leveraging **Vite** for the build process and **Tailwind CSS v4** for modern, CSS-first utility styling.
 
 ## 🚀 Project Overview
 
-DevHub is a data-driven portfolio designed for developers. It prioritizes a refined visual hierarchy, smooth micro-interactions, and ease of maintenance. The entire application's content—from your bio and skills to your project list—is managed through a single source of truth: `src/data/portfolio.json`.
+My Portfolio is a data-driven portfolio designed for developers. It prioritizes a refined visual hierarchy, smooth micro-interactions, and ease of maintenance. The entire application's content—from my bio and skills to my project list—is managed through a single source of truth: `src/data/portfolio.json`.
 
 ### Key Features
 - **Data-Driven Architecture:** Update your entire portfolio by simply editing a JSON file.
@@ -33,8 +33,8 @@ Follow these steps to get the project running locally:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/sarfarazstark/devhub.git
-   cd devhub
+   git clone https://github.com/sarfarazstark/portfolio.git
+   cd portfolio
    ```
 
 2. **Install dependencies:**
