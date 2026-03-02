@@ -212,12 +212,18 @@ function IconContainer({
             href={href}
             onClick={(e) => {
                 play()
-                trigger('success')
+                if (isMobile) {
+                    trigger('success')
+                }
                 onClick?.(e)
             }}
             onMouseEnter={() => {
-                play()
-                trigger(10)
+                if (!isMobile) {
+                    play()
+                }
+                if (isMobile) {
+                    trigger(10)
+                }
             }}
             style={{ width, height }}
             ref={ref}
