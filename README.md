@@ -1,73 +1,90 @@
-# React + TypeScript + Vite
+# DevHub Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-fidelity, pixel-perfect portfolio application built with **React 19** and **TypeScript**, leveraging **Vite** for the build process and **Tailwind CSS v4** for modern, CSS-first utility styling.
 
-Currently, two official plugins are available:
+## 🚀 Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+DevHub is a data-driven portfolio designed for developers. It prioritizes a refined visual hierarchy, smooth micro-interactions, and ease of maintenance. The entire application's content—from your bio and skills to your project list—is managed through a single source of truth: `src/data/portfolio.json`.
 
-## React Compiler
+### Key Features
+- **Data-Driven Architecture:** Update your entire portfolio by simply editing a JSON file.
+- **Modern Tech Stack:** Built with the latest React 19 features and Tailwind CSS v4.
+- **Micro-Interactions:** Powered by **Framer Motion**, featuring scroll reveals, staggered lists, and an interactive navigation dock.
+- **Theme Support:** Native light and dark mode with a sophisticated neutral Zinc-based palette.
+- **Dynamic Project Filtering:** Advanced filtering system powered by **Zustand** that automatically cleans up stale tags.
+- **High-Quality Iconography:** Integrated with **Lucide React** and **Developer Icons** for a professional look.
+- **Responsive Navigation:** A floating, animated Dock with smooth-scroll integration and scroll-padding.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Core:** [React 19](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Vite](https://vitejs.dev/)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/), [Framer Motion](https://www.framer.com/motion/)
+- **State Management:** [Zustand](https://github.com/pmndrs/zustand)
+- **Icons:** [Lucide React](https://lucide.dev/), [Developer Icons](https://developer-icons.vercel.app/)
+- **Utilities:** [clsx](https://github.com/lukeed/clsx), [tailwind-merge](https://github.com/dcastil/tailwind-merge)
 
-```js
-export default defineConfig([
-    globalIgnores(['dist']),
-    {
-        files: ['**/*.{ts,tsx}'],
-        extends: [
-            // Other configs...
+---
 
-            // Remove tseslint.configs.recommended and replace with this
-            tseslint.configs.recommendedTypeChecked,
-            // Alternatively, use this for stricter rules
-            tseslint.configs.strictTypeChecked,
-            // Optionally, add this for stylistic rules
-            tseslint.configs.stylisticTypeChecked,
+## 📦 Setup & Installation
 
-            // Other configs...
-        ],
-        languageOptions: {
-            parserOptions: {
-                project: ['./tsconfig.node.json', './tsconfig.app.json'],
-                tsconfigRootDir: import.meta.dirname,
-            },
-            // other options...
-        },
-    },
-])
-```
+Follow these steps to get the project running locally:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/sarfarazstark/devhub.git
+   cd devhub
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-export default defineConfig([
-    globalIgnores(['dist']),
-    {
-        files: ['**/*.{ts,tsx}'],
-        extends: [
-            // Other configs...
-            // Enable lint rules for React
-            reactX.configs['recommended-typescript'],
-            // Enable lint rules for React DOM
-            reactDom.configs.recommended,
-        ],
-        languageOptions: {
-            parserOptions: {
-                project: ['./tsconfig.node.json', './tsconfig.app.json'],
-                tsconfigRootDir: import.meta.dirname,
-            },
-            // other options...
-        },
-    },
-])
-```
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser:**
+   Navigate to `http://localhost:5173` to see the application in action.
+
+---
+
+## 📝 Usage
+
+### Updating Content
+To personalize the portfolio, modify the data in `src/data/portfolio.json`. This file controls:
+- **Profile Info:** Name, role, location, and bio.
+- **Experience:** Work history with logos and descriptions.
+- **Education:** Degrees and certifications.
+- **Skills:** Technical expertise with corresponding icons.
+- **Projects:** Title, description, tech stack, links, and featured status.
+
+### Customizing Styles
+The project uses **Tailwind CSS v4**. You can customize the theme and global styles in:
+- `src/index.css`
+- `src/App.css`
+
+---
+
+## 🤝 Contribution
+
+Contributions are welcome! If you find a bug or have a feature request, please follow these steps:
+
+1. Fork the project.
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the branch (`git push origin feature/AmazingFeature`).
+5. Open a Pull Request.
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for more details.
+
+---
+
+*Built with ❤️ by [Sarfaraz](https://github.com/sarfarazstark)*
