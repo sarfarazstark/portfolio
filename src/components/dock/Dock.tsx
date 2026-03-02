@@ -19,6 +19,7 @@ import { click001Sound } from '@/lib/click-001'
 import { toggle001Sound } from '@/lib/toggle-001'
 import type { SoundAsset } from '@/lib/sound-types'
 import { cn } from '@/utils/cn'
+import { useWebHaptics } from 'web-haptics/react'
 
 interface DockItem {
     icon: LucideIcon
@@ -204,12 +205,20 @@ function IconContainer({
     })
 
     const [play] = useSound(click001Sound, { interrupt: true })
+    const { trigger } = useWebHaptics()
 
     return (
         <motion.a
             href={href}
-            onClick={onClick}
-            onMouseEnter={() => play()}
+            onClick={(e) => {
+                play()
+                trigger('success')
+                onClick?.(e)
+            }}
+            onMouseEnter={() => {
+                play()
+                trigger(10)
+            }}
             style={{ width, height }}
             ref={ref}
             aria-label={label}
