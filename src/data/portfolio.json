@@ -220,8 +220,34 @@
             },
 			"period": "Oct 14, 2025 - Oct 15, 2025",
             "image": "/invento.png",
-            "featured": true,
+			"featured": false,
             "slug": "invento"
+		},
+		{
+			"id": "7",
+			"title": "Developer Portfolio",
+			"description": "A high-fidelity, pixel-perfect portfolio application completely data-driven and featuring smooth animations and a floating animated dock.",
+			"tags": [
+				"Frontend",
+				"React",
+				"TypeScript"
+			],
+			"techStack": [
+				"React 19",
+				"TypeScript",
+				"Tailwind CSS v4",
+				"Framer Motion",
+				"Zustand",
+				"Vite"
+			],
+			"links": {
+				"github": "https://github.com/sarfarazstark/portfolio",
+				"live": "#"
+			},
+			"period": "Feb 2026 - Present",
+			"image": "/portfolio.png",
+			"featured": true,
+			"slug": "developer-portfolio"
         }
     ],
     "footer": {
