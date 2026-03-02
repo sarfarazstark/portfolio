@@ -1,4 +1,4 @@
-# Project Overview: DevHub Portfolio
+# Project Overview: Sarfaraz's Portfolio
 
 This project is a high-fidelity, pixel-perfect portfolio application built with React 19 and TypeScript, leveraging Vite for the build process and Tailwind CSS v4 for styling. It is fully data-driven, with content managed via `src/data/portfolio.json`.
 
