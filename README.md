@@ -1,4 +1,4 @@
-# My Portfolio
+# My Portfolio [![Netlify Status](https://api.netlify.com/api/v1/badges/44abef9d-1f92-4aad-a3a6-48eb5720b54d/deploy-status)](https://app.netlify.com/projects/sarfaraz-pf/deploys)
 
 A high-fidelity, pixel-perfect portfolio application built with **React 19** and **TypeScript**, leveraging **Vite** for the build process and **Tailwind CSS v4** for modern, CSS-first utility styling.
 
