@@ -198,7 +198,7 @@
                 "github": "https://github.com/sarfarazstark/finco",
 				"live": "https://finco-beige.vercel.app/"
             },
-			"period": "Dec 18, 2025 - Paused",
+			"period": "Dec 18, 2025 - Feb 26, 2026",
             "image": "/finco.png",
             "featured": true,
             "slug": "finco"
@@ -226,7 +226,7 @@
 		{
 			"id": "7",
 			"title": "Developer Portfolio",
-			"description": "A high-fidelity, pixel-perfect portfolio application completely data-driven and featuring smooth animations and a floating animated dock.",
+			"description": "THIS PORTFOLIO",
 			"tags": [
 				"Frontend",
 				"React",
@@ -244,7 +244,7 @@
 				"github": "https://github.com/sarfarazstark/portfolio",
 				"live": "#"
 			},
-			"period": "Feb 2026 - Present",
+			"period": "Feb 19, 2026 - Mar 3, 2026",
 			"image": "/portfolio.png",
 			"featured": true,
 			"slug": "developer-portfolio"
