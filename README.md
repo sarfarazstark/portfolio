@@ -8,6 +8,7 @@ My Portfolio is a data-driven portfolio designed for developers. It prioritizes 
 
 ### Key Features
 - **Data-Driven Architecture:** Update your entire portfolio by simply editing a JSON file.
+- **Immersive Layers:** Advanced Sound & Haptic feedback system for tactile and audio-responsive UI.
 - **Modern Tech Stack:** Built with the latest React 19 features and Tailwind CSS v4.
 - **Micro-Interactions:** Powered by **Framer Motion**, featuring scroll reveals, staggered lists, and an interactive navigation dock.
 - **Theme Support:** Native light and dark mode with a sophisticated neutral Zinc-based palette.
@@ -21,6 +22,7 @@ My Portfolio is a data-driven portfolio designed for developers. It prioritizes 
 
 - **Core:** [React 19](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Vite](https://vitejs.dev/)
 - **Styling:** [Tailwind CSS v4](https://tailwindcss.com/), [Framer Motion](https://www.framer.com/motion/)
+- **Immersive Layers:** [web-haptics](https://github.com/lochie/web-haptics), [soundcn](https://github.com/kapishdima/soundcn) (UI Sound Registry)
 - **State Management:** [Zustand](https://github.com/pmndrs/zustand)
 - **Icons:** [Lucide React](https://lucide.dev/), [Developer Icons](https://developer-icons.vercel.app/)
 - **Utilities:** [clsx](https://github.com/lukeed/clsx), [tailwind-merge](https://github.com/dcastil/tailwind-merge)
@@ -69,15 +71,23 @@ The project uses **Tailwind CSS v4**. You can customize the theme and global sty
 
 ---
 
-## 🤝 Contribution
+## 🕹️ Immersive Experience
 
-Contributions are welcome! If you find a bug or have a feature request, please follow these steps:
+This portfolio goes beyond visual aesthetics by incorporating a multi-sensory feedback layer:
 
-1. Fork the project.
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the branch (`git push origin feature/AmazingFeature`).
-5. Open a Pull Request.
+- **Tactile Feedback:** Powered by [web-haptics](https://github.com/lochie/web-haptics), providing native-feeling, pattern-based haptic feedback for mobile web users, enhancing the physical feel of the UI.
+- **Audio Feedback:** Implements the [soundcn](https://github.com/kapishdima/soundcn) philosophy—700+ curated UI sounds delivered as self-contained TypeScript modules with **inline base64 data URIs**. This ensures zero-dependency, high-performance audio with no external asset fetching.
+
+---
+
+## 💎 Credits & Acknowledgments
+
+Special thanks to the creators of the following tools and libraries that made this project possible:
+
+- **[soundcn](https://github.com/kapishdima/soundcn)** by [kapishdima](https://github.com/kapishdima) - For the innovative UI sound registry and zero-dependency audio architecture.
+- **[web-haptics](https://github.com/lochie/web-haptics)** by [lochie](https://github.com/lochie) - For the seamless haptic feedback API for the mobile web.
+- **[Framer Motion](https://www.framer.com/motion/)** - For the fluid, complex animations.
+- **[Lucide React](https://lucide.dev/)** & **[Developer Icons](https://developer-icons.vercel.app/)** - For the comprehensive and high-quality iconography.
 
 ---
 
