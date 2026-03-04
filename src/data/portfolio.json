@@ -4,9 +4,9 @@
         "role": "Full Stack Developer",
         "avatar": "https://github.com/sarfarazstark.png",
         "location": "Kolkata, India",
-        "bio": "Full Stack Developer building fast, modern web applications with Next.js or Laravel."
+        "bio": "Full Stack Developer building fast, modern web applications with Next.js and Laravel."
     },
-    "about": "I am a Full Stack Developer who builds standalone, high-performance web applications using either Next.js or Laravel. I specialize in creating complete solutions with these frameworks - from scalable Next.js apps to robust Laravel systems. I focus on writing clean, simple code that is easy to maintain and provides an exceptional experience for users.",
+    "about": "I’m a Full Stack Developer who enjoys building complete, high-performance web applications. I primarily work with **Next.js** and **Laravel**, using them to create everything from scalable modern web apps to reliable backend systems. My focus is on developing practical, end-to-end solutions - writing clean, simple code that is easy to maintain and designed to deliver a smooth, efficient experience for users.",
     "experience": [
         {
             "id": "1",
