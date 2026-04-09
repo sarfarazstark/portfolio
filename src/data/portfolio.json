@@ -14,14 +14,14 @@
             "role": "Full Stack Developer",
             "period": "Aug 2025 - Present",
             "description": "Architecting full-stack solutions with a focus on modularity. Currently reducing development overhead by implementing a shared component library across Laravel and React projects for high-performance enterprise applications.",
-            "logo": "/aofenggsys_logo.jpg"
+            "logo": "/euphoria_genx_logo.jpg"
         },
         {
             "id": "2",
-            "company": "Fassalkart",
-            "role": "Full Stack Developer",
-            "period": "Sep 2024 - Aug 2025",
-            "description": "Led the ground-up development of a multi-vendor marketplace. Engineered a robust PostgreSQL schema that handled complex product variations without performance degradation and streamlined deployment using optimized Docker configurations.",
+            "company": "Euphoria GenX",
+            "role": "Web Development Intern",
+            "period": "Aug 2024 - Dec 2024",
+            "description": "Created a Online Book Store Project. Worked with HTML, CSS, JavaScript, PHP, MySQL, and Bootstrap to design and build the platform.",
             "logo": "/fassalkart_logo.jpg"
         },
         {
