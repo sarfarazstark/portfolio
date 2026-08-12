@@ -100,6 +100,14 @@
             "icon": "inertiajs"
         },
         {
+            "name": "Electron",
+            "icon": "electron"
+        },
+        {
+            "name": "SQLite",
+            "icon": "sqlite"
+        },
+        {
             "name": "Git",
             "icon": "git"
         },
@@ -109,6 +117,26 @@
         }
     ],
     "projects": [
+        {
+            "id": "8",
+            "title": "Motus Gym Management",
+            "description": "An offline-first desktop application built for gyms, fitness centers, and training studios to simplify daily operations, member management, attendance, billing, and financial reporting.",
+            "tags": ["Desktop App", "Electron", "TypeScript"],
+            "techStack": [
+                "Electron",
+                "React.js",
+                "TypeScript",
+                "SQLite",
+                "Tailwind CSS"
+            ],
+            "links": {
+                "live": "https://apps.microsoft.com/detail/9NG69JNV72DN?hl=en-us&gl=IN&ocid=pdpshare"
+            },
+            "period": "Feb 2026 - Present",
+            "image": "/motus.png",
+            "featured": true,
+            "slug": "motus-gym-management"
+        },
         {
             "id": "1",
             "title": "Audiophile",
@@ -246,7 +274,7 @@
 			},
 			"period": "Feb 19, 2026 - Mar 3, 2026",
 			"image": "/portfolio.png",
-			"featured": true,
+			"featured": false,
 			"slug": "developer-portfolio"
         }
     ],

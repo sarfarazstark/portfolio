@@ -1,9 +1,9 @@
-import { motion } from 'framer-motion'
-import { Code, ArrowUpRight } from 'lucide-react'
-import type { Project } from '@/types/portfolio'
+import { motion } from "framer-motion";
+import { Code, ArrowUpRight } from "lucide-react";
+import type { Project } from "@/types/portfolio";
 
 interface ProjectCardProps {
-	project: Project
+	project: Project;
 }
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
@@ -15,7 +15,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 			exit={{ opacity: 0, scale: 0.95 }}
 			whileHover={{ y: -4 }}
 			transition={{ duration: 0.3 }}
-			className="group relative flex flex-col h-full overflow-hidden rounded-2xl border border-zinc-400/20 bg-zinc-400/5 transition-all hover:bg-zinc-400/10 hover:shadow-xl hover:border-zinc-400/40 dark:bg-zinc-900/50"
+			className="group relative flex flex-col h-full overflow-hidden rounded-sm border border-zinc-400/20 bg-zinc-400/5 transition-all hover:bg-zinc-400/10 hover:shadow-xl hover:border-zinc-400/40 dark:bg-zinc-900/50"
 		>
 			<div className="relative aspect-video overflow-hidden shrink-0">
 				<img
@@ -41,7 +41,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 							<Code className="h-4 w-4" />
 						</motion.a>
 					)}
-					{project.links.live && project.links.live !== '#' && (
+					{project.links.live && project.links.live !== "#" && (
 						<motion.a
 							whileHover={{ scale: 1.1 }}
 							whileTap={{ scale: 0.9 }}
@@ -49,7 +49,11 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 							target="_blank"
 							rel="noreferrer"
 							className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-950/50 text-white backdrop-blur-md border border-white/10 hover:bg-zinc-950/80 transition-colors"
-							title="Live Preview"
+							title={
+								project.links.live.includes("apps.microsoft.com")
+									? "Microsoft Store"
+									: "Live Preview"
+							}
 						>
 							<ArrowUpRight className="h-4 w-4" />
 						</motion.a>
@@ -95,7 +99,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 				</div>
 			</div>
 		</motion.div>
-	)
-}
+	);
+};
 
-export default ProjectCard
+export default ProjectCard;
