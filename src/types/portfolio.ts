@@ -4,6 +4,7 @@ export interface Profile {
     avatar: string
     location: string
     bio: string
+    resume: string
 }
 
 export interface Experience {
@@ -57,7 +58,7 @@ export interface PortfolioData {
     profile: Profile
     about: string
     experience: Experience[]
-    education: Education[]
+    education: Education[]
     skills: Skill[]
     projects: Project[]
     footer: Footer

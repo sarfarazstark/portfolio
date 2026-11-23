@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { getAudioContext, decodeAudioData } from '@/lib/sound-engine'
+import { useSoundSettings } from '@/hooks/useSoundSettings'
 import type {
     SoundAsset,
     UseSoundOptions,
@@ -12,11 +13,14 @@ export function useSound(
     sound: SoundAsset,
     options: UseSoundOptions = {},
 ): UseSoundReturn {
+    // Global mute from the dock wins unless a caller passes soundEnabled.
+    const globallyEnabled = useSoundSettings((s) => s.soundEnabled)
+
     const {
         volume = 1,
         playbackRate = 1,
         interrupt = false,
-        soundEnabled = true,
+        soundEnabled = globallyEnabled,
         onPlay,
         onEnd,
         onPause,

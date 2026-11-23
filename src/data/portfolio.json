@@ -4,9 +4,10 @@
         "role": "Full Stack Developer",
         "avatar": "https://github.com/sarfarazstark.png",
         "location": "Kolkata, India",
-        "bio": "Full Stack Developer building fast, modern web applications with Next.js and Laravel."
+        "bio": "Full Stack Developer building fast, modern web applications with Next.js and Laravel.",
+        "resume": "https://sarfaraz-resume.edgeone.app/"
     },
-    "about": "I’m a Full Stack Developer who enjoys building complete, high-performance web applications. I primarily work with Next.js and Laravel, using them to create everything from scalable modern web apps to reliable backend systems. My focus is on developing practical, end-to-end solutions - writing clean, simple code that is easy to maintain and designed to deliver a smooth, efficient experience for users.",
+    "about": "Full Stack Developer specializing in Next.js and Laravel, building scalable, high-performance web applications with clean, maintainable code and a focus on user experience.",
     "experience": [
         {
             "id": "1",
@@ -118,7 +119,7 @@
     ],
     "projects": [
         {
-            "id": "8",
+            "id": "1",
             "title": "Motus Gym Management",
             "description": "An offline-first desktop application built for gyms, fitness centers, and training studios to simplify daily operations, member management, attendance, billing, and financial reporting.",
             "tags": ["Desktop App", "Electron", "TypeScript"],
@@ -130,15 +131,15 @@
                 "Tailwind CSS"
             ],
             "links": {
-                "live": "https://apps.microsoft.com/detail/9NG69JNV72DN?hl=en-us&gl=IN&ocid=pdpshare"
+                "live": "https://motus.shalestack.com/"
             },
             "period": "Feb 2026 - Present",
-            "image": "/motus.png",
+            "image": "/images/motus.webp",
             "featured": true,
             "slug": "motus-gym-management"
         },
         {
-            "id": "1",
+            "id": "2",
             "title": "Audiophile",
             "description": "Demonstrating how Next.js 15 Server Actions can create a lightning-fast, zero-friction shopping experience with absolute type-safety and persistent global state.",
             "tags": ["Full Stack", "Next.js", "TypeScript"],
@@ -151,42 +152,27 @@
             ],
             "links": {
                 "github": "https://github.com/sarfarazstark/audiophile",
-				"live": "https://audiophile-eight-cyan.vercel.app/"
+                "live": "https://audiophile-eight-cyan.vercel.app/"
             },
-			"period": "Dec 6, 2025 - Jan 27, 2026",
-            "image": "/audiophile.png",
+            "period": "Dec 6, 2025 - Jan 27, 2026",
+            "image": "/images/audiophile.webp",
             "featured": true,
             "slug": "audiophile"
         },
         {
-            "id": "2",
+            "id": "3",
             "title": "Frontend Mentor Challenges",
             "description": "A curated collection of 30+ responsive and accessible web solutions, focusing on translating complex design systems into production-ready frontend code.",
             "tags": ["Frontend", "React", "JavaScript"],
             "techStack": ["HTML5", "CSS3", "JavaScript", "React.js"],
             "links": {
                 "github": "https://github.com/sarfarazstark/frontendmentor",
-				"live": "https://fm.sarfaraz.is-a.dev"
+                "live": "https://fm.sarfaraz.is-a.dev"
             },
-			"period": "19 July 2022 - Present",
-            "image": "/frontendmentor.png",
+            "period": "19 July 2022 - Present",
+            "image": "/images/frontendmentor.webp",
             "featured": false,
             "slug": "frontend-mentor-challenges"
-        },
-        {
-            "id": "3",
-            "title": "Chatbot",
-            "description": "Exploring LLM integration by building a seamless chat interface using Gemini API, Laravel, and Inertia.js with a focus on real-time feedback loops.",
-            "tags": ["AI", "PHP", "React"],
-            "techStack": ["Laravel", "InertiaJS", "React.js", "Gemini API"],
-            "links": {
-                "github": "https://github.com/sarfarazstark/chatbot",
-                "live": "#"
-            },
-			"period": "Dec 31, 2024 - Jan 12, 2025",
-            "image": "/chatbot.png",
-            "featured": false,
-            "slug": "chatbot"
         },
         {
             "id": "4",
@@ -205,15 +191,15 @@
                 "github": "https://github.com/sarfarazstark/snapcast",
                 "live": "#"
             },
-			"period": "Apr 20, 2025 - May 24, 2025",
-            "image": "/snapcast.png",
+            "period": "Apr 20, 2025 - May 24, 2025",
+            "image": "/images/snapcast.webp",
             "featured": true,
             "slug": "snapcast"
         },
         {
             "id": "5",
             "title": "Finco",
-            "description": "A full-featured personal finance app with budget management, savings pots, recurring bill tracking, transaction search & filtering, and CRUD operations — all with keyboard-accessible, responsive UI.",
+            "description": "A full-featured personal finance app with budget management, savings pots, recurring bill tracking, transaction search & filtering, and CRUD operations - all with keyboard-accessible, responsive UI.",
             "tags": ["Full Stack", "Next.js", "TypeScript"],
             "techStack": [
                 "Next.js",
@@ -224,58 +210,34 @@
             ],
             "links": {
                 "github": "https://github.com/sarfarazstark/finco",
-				"live": "https://finco-beige.vercel.app/"
+                "live": "https://finco-beige.vercel.app/"
             },
-			"period": "Dec 18, 2025 - Feb 26, 2026",
-            "image": "/finco.png",
+            "period": "Dec 18, 2025 - Feb 26, 2026",
+            "image": "/images/finco.webp",
             "featured": true,
             "slug": "finco"
         },
         {
             "id": "6",
-            "title": "Invento",
-            "description": "Full Stack Inventory Management System with real-time tracking and reporting, built to demonstrate CRUD operations and database management in Next.js.",
-            "tags": ["Full Stack", "Next.js", "TypeScript"],
+            "title": "Developer Portfolio",
+            "description": "THIS PORTFOLIO",
+            "tags": ["Frontend", "React", "TypeScript"],
             "techStack": [
-                "Next.js",
+                "React 19",
                 "TypeScript",
-                "Tailwind CSS",
-                "PostgreSQL"
+                "Tailwind CSS v4",
+                "Framer Motion",
+                "Zustand",
+                "Vite"
             ],
             "links": {
-                "github": "https://github.com/sarfarazstark/invento",
+                "github": "https://github.com/sarfarazstark/portfolio",
                 "live": "#"
             },
-			"period": "Oct 14, 2025 - Oct 15, 2025",
-            "image": "/invento.png",
-			"featured": false,
-            "slug": "invento"
-		},
-		{
-			"id": "7",
-			"title": "Developer Portfolio",
-			"description": "THIS PORTFOLIO",
-			"tags": [
-				"Frontend",
-				"React",
-				"TypeScript"
-			],
-			"techStack": [
-				"React 19",
-				"TypeScript",
-				"Tailwind CSS v4",
-				"Framer Motion",
-				"Zustand",
-				"Vite"
-			],
-			"links": {
-				"github": "https://github.com/sarfarazstark/portfolio",
-				"live": "#"
-			},
-			"period": "Feb 19, 2026 - Mar 3, 2026",
-			"image": "/portfolio.png",
-			"featured": false,
-			"slug": "developer-portfolio"
+            "period": "Feb 19, 2026 - Mar 3, 2026",
+            "image": "/images/portfolio.webp",
+            "featured": false,
+            "slug": "developer-portfolio"
         }
     ],
     "footer": {

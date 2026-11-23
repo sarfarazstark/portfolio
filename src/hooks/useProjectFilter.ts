@@ -2,16 +2,13 @@ import { create } from 'zustand'
 
 interface ProjectFilterState {
     selectedTags: string[]
-    searchQuery: string
     toggleTag: (tag: string) => void
     removeTag: (tag: string) => void
     resetFilters: () => void
-    setSearchQuery: (query: string) => void
 }
 
 export const useProjectFilter = create<ProjectFilterState>((set) => ({
     selectedTags: [],
-    searchQuery: '',
     toggleTag: (tag: string) =>
         set((state) => {
             if (tag === 'All') {
@@ -32,6 +29,5 @@ export const useProjectFilter = create<ProjectFilterState>((set) => ({
         set((state) => ({
             selectedTags: state.selectedTags.filter((t) => t !== tag),
         })),
-    resetFilters: () => set({ selectedTags: [], searchQuery: '' }),
-    setSearchQuery: (query: string) => set({ searchQuery: query }),
+    resetFilters: () => set({ selectedTags: [] }),
 }))
