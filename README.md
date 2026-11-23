@@ -13,7 +13,7 @@ My Portfolio is a data-driven portfolio designed for developers. It prioritizes 
 - **Micro-Interactions:** Powered by **Framer Motion**, featuring scroll reveals, staggered lists, and an interactive navigation dock.
 - **Theme Support:** Native light and dark mode with a sophisticated neutral Zinc-based palette.
 - **Dynamic Project Filtering:** Advanced filtering system powered by **Zustand** that automatically cleans up stale tags.
-- **High-Quality Iconography:** Integrated with **Lucide React** and **Developer Icons** for a professional look.
+- **High-Quality Iconography:** Integrated with **Lucide React** and **Devicon** for a professional look.
 - **Responsive Navigation:** A floating, animated Dock with smooth-scroll integration and scroll-padding.
 
 ---
@@ -24,7 +24,7 @@ My Portfolio is a data-driven portfolio designed for developers. It prioritizes 
 - **Styling:** [Tailwind CSS v4](https://tailwindcss.com/), [Framer Motion](https://www.framer.com/motion/)
 - **Immersive Layers:** [web-haptics](https://github.com/lochie/web-haptics), [soundcn](https://github.com/kapishdima/soundcn) (UI Sound Registry)
 - **State Management:** [Zustand](https://github.com/pmndrs/zustand)
-- **Icons:** [Lucide React](https://lucide.dev/), [Developer Icons](https://developer-icons.vercel.app/)
+- **Icons:** [Lucide React](https://lucide.dev/), [Devicon](https://devicon.dev/)
 - **Utilities:** [clsx](https://github.com/lukeed/clsx), [tailwind-merge](https://github.com/dcastil/tailwind-merge)
 
 ---
@@ -87,7 +87,7 @@ Special thanks to the creators of the following tools and libraries that made th
 - **[soundcn](https://github.com/kapishdima/soundcn)** by [kapishdima](https://github.com/kapishdima) - For the innovative UI sound registry and zero-dependency audio architecture.
 - **[web-haptics](https://github.com/lochie/web-haptics)** by [lochie](https://github.com/lochie) - For the seamless haptic feedback API for the mobile web.
 - **[Framer Motion](https://www.framer.com/motion/)** - For the fluid, complex animations.
-- **[Lucide React](https://lucide.dev/)** & **[Developer Icons](https://developer-icons.vercel.app/)** - For the comprehensive and high-quality iconography.
+- **[Lucide React](https://lucide.dev/)** & **[Devicon](https://devicon.dev/)** - For the comprehensive and high-quality iconography.
 
 ---
 
