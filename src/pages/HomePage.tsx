@@ -1,4 +1,6 @@
 import Hero from '@/components/sections/Hero'
+import About from '@/components/sections/About'
+import Connect from '@/components/sections/Connect'
 import Experience from '@/components/sections/Experience'
 import Education from '@/components/sections/Education'
 import Skills from '@/components/sections/Skills'
@@ -11,13 +13,22 @@ const data = portfolioData as PortfolioData
 
 export default function HomePage() {
     return (
-        <main className="relative z-10 max-w-xl lg:max-w-2xl mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-24 space-y-16 sm:space-y-20 lg:space-y-24">
-            <Hero profile={data.profile} about={data.about} />
-            <Experience experiences={data.experience} />
-            <Education education={data.education} />
-            <Skills skills={data.skills} />
-            <Projects projects={data.projects} />
-            <Footer footer={data.footer} />
+        <main className="relative z-10 mx-auto max-w-215 px-3 pt-7 pb-32">
+            <div className="sheet-frame bg-background">
+                <section id="home">
+                    <Hero profile={data.profile} />
+                </section>
+                <About about={data.about} />
+                <Connect
+                    socials={data.footer.socials}
+                    resume={data.profile.resume}
+                />
+                <Experience experiences={data.experience} />
+                <Education education={data.education} />
+                <Skills skills={data.skills} />
+                <Projects projects={data.projects} />
+                <Footer footer={data.footer} />
+            </div>
         </main>
     )
 }

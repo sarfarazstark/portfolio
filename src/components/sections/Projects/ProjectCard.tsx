@@ -1,105 +1,114 @@
-import { motion } from "framer-motion";
-import { Code, ArrowUpRight } from "lucide-react";
-import type { Project } from "@/types/portfolio";
+import { motion } from 'framer-motion'
+import { ArrowUpRight, Github } from 'lucide-react'
+import type { Project } from '@/types/portfolio'
+import { cn } from '@/lib/utils'
+import { Chip } from '@/components/ui/sheet'
 
-interface ProjectCardProps {
-	project: Project;
+/**
+ * Split row: screenshot on one side, copy on the other. `flip` swaps the
+ * sides so consecutive rows alternate, matching the sheet's rhythm.
+ */
+const ProjectCard = ({
+    project,
+    flip = false,
+}: {
+    project: Project
+    flip?: boolean
+}) => (
+    <motion.article
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-60px' }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className="hl grid grid-cols-1 md:grid-cols-[1fr_1fr] min-h-76"
+    >
+        {/* Image fills its half edge to edge: no padding, no inner frame. */}
+        <div
+            className={cn(
+                'group relative min-h-45 overflow-hidden bg-surface-2 md:min-h-53.5',
+                flip ? 'md:order-2' : 'md:order-1',
+            )}
+        >
+            <img
+                src={project.image}
+                alt={project.title}
+                loading="lazy"
+                className="absolute inset-0 size-full object-cover object-top transition-transform duration-700 ease-out-expo group-hover:scale-[1.04]"
+            />
+        </div>
+
+        <div
+            className={cn(
+                'flex flex-col justify-center px-4 py-5 sm:px-6 md:py-6',
+                flip ? 'md:order-1' : 'md:order-2',
+            )}
+        >
+            <div className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
+                <h3 className="text-lg font-medium tracking-[-0.01em]">
+                    {project.title}
+                </h3>
+                {project.period && (
+                    <span className="font-mono text-[11.5px] text-muted-foreground sm:whitespace-nowrap">
+                        {project.period}
+                    </span>
+                )}
+            </div>
+
+            <p className="prose-body mt-2 text-[13.5px] text-muted-2 text-pretty">
+                {project.description}
+            </p>
+
+            <div className="mt-3.5 flex flex-wrap gap-1.75">
+                {project.techStack.map((tech) => (
+                    <Chip key={tech} className="text-[11.5px]">
+                        {tech}
+                    </Chip>
+                ))}
+            </div>
+
+            <div className="mt-4 flex flex-wrap gap-1.5">
+                {project.links.github && (
+                    <LinkChip
+                        href={project.links.github}
+                        label="Source"
+                        icon={<Github />}
+                    />
+                )}
+                {project.links.live && project.links.live !== '#' && (
+                    <LinkChip
+                        href={project.links.live}
+                        label="Visit"
+                        icon={<ArrowUpRight />}
+                    />
+                )}
+            </div>
+        </div>
+    </motion.article>
+)
+
+function LinkChip({
+    href,
+    label,
+    icon,
+}: {
+    href: string
+    label: string
+    icon: React.ReactNode
+}) {
+    return (
+        <a
+            href={href}
+            target="_blank"
+            rel="noreferrer"
+            className="group/link inline-flex items-center gap-1.25 rounded-lg bg-card py-1 pr-2 pl-2.5 text-xs font-medium ring-1 ring-border-2 shadow-(--shadow-card) transition-[transform,box-shadow] duration-300 ease-spring hover:shadow-(--shadow-lift) hover:ring-border-hover"
+        >
+            <span className="size-3 text-muted-foreground [&>svg]:size-3">
+                {icon}
+            </span>
+            {label}
+            <ArrowUpRight className="size-3 text-muted-4 transition-transform duration-300 ease-spring group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 group-hover/link:text-foreground" />
+        </a>
+    )
 }
 
-const ProjectCard = ({ project }: ProjectCardProps) => {
-	return (
-		<motion.div
-			layout
-			initial={{ opacity: 0, scale: 0.95 }}
-			animate={{ opacity: 1, scale: 1 }}
-			exit={{ opacity: 0, scale: 0.95 }}
-			whileHover={{ y: -4 }}
-			transition={{ duration: 0.3 }}
-			className="group relative flex flex-col h-full overflow-hidden rounded-sm border border-zinc-400/20 bg-zinc-400/5 transition-all hover:bg-zinc-400/10 hover:shadow-xl hover:border-zinc-400/40 dark:bg-zinc-900/50"
-		>
-			<div className="relative aspect-video overflow-hidden shrink-0">
-				<img
-					src={project.image}
-					alt={project.title}
-					loading="lazy"
-					className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-				/>
-				<div className="absolute inset-0 bg-linear-to-t from-zinc-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-
-				{/* Top-right aligned action buttons */}
-				<div className="absolute top-3 right-3 flex gap-2 z-10">
-					{project.links.github && (
-						<motion.a
-							whileHover={{ scale: 1.1 }}
-							whileTap={{ scale: 0.9 }}
-							href={project.links.github}
-							target="_blank"
-							rel="noreferrer"
-							className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-950/50 text-white backdrop-blur-md border border-white/10 hover:bg-zinc-950/80 transition-colors"
-							title="View Code"
-						>
-							<Code className="h-4 w-4" />
-						</motion.a>
-					)}
-					{project.links.live && project.links.live !== "#" && (
-						<motion.a
-							whileHover={{ scale: 1.1 }}
-							whileTap={{ scale: 0.9 }}
-							href={project.links.live}
-							target="_blank"
-							rel="noreferrer"
-							className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-950/50 text-white backdrop-blur-md border border-white/10 hover:bg-zinc-950/80 transition-colors"
-							title={
-								project.links.live.includes("apps.microsoft.com")
-									? "Microsoft Store"
-									: "Live Preview"
-							}
-						>
-							<ArrowUpRight className="h-4 w-4" />
-						</motion.a>
-					)}
-				</div>
-			</div>
-
-			<div className="flex flex-1 flex-col p-4 sm:p-5">
-				<div className="space-y-1.5 flex-1">
-					<h3 className="text-base font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 group-hover:text-zinc-600 dark:group-hover:text-zinc-400 transition-colors">
-						{project.title}
-					</h3>
-
-					{project.period && (
-						<p className="text-[11px] font-medium text-zinc-400">
-							{project.period}
-						</p>
-					)}
-
-					<p className="text-[13px] text-zinc-500 dark:text-zinc-400 line-clamp-3 leading-relaxed">
-						{project.description}
-					</p>
-				</div>
-
-				<div className="mt-5 pt-4 border-t border-zinc-400/10">
-					<div className="flex items-center justify-between">
-						<div className="flex flex-wrap gap-1.5 min-h-6 items-center">
-							{project.techStack.slice(0, 3).map((tech) => (
-								<span
-									key={tech}
-									className="inline-flex items-center rounded-md border border-zinc-400/20 px-1.5 py-0.5 text-[11px] font-normal text-zinc-500 dark:text-zinc-400"
-								>
-									{tech}
-								</span>
-							))}
-							{project.techStack.length > 3 && (
-								<span className="inline-flex items-center text-[11px] font-medium text-zinc-400 border border-zinc-400/20 px-1.5 py-0.5 rounded-md">
-									+{project.techStack.length - 3}
-								</span>
-							)}
-						</div>
-					</div>
-				</div>
-			</div>
-		</motion.div>
-	);
-};
-
-export default ProjectCard;
+export default ProjectCard

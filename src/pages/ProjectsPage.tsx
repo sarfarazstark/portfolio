@@ -12,9 +12,8 @@ const data = portfolioData as PortfolioData
 
 export default function ProjectsPage() {
     const navigate = useNavigate()
-    const { selectedTags, searchQuery, resetFilters } = useProjectFilter()
+    const { selectedTags, resetFilters } = useProjectFilter()
 
-    // Reset filters on unmount to keep home page clean
     useEffect(() => {
         return () => resetFilters()
     }, [resetFilters])
@@ -26,83 +25,68 @@ export default function ProjectsPage() {
     }, [])
 
     const filteredProjects = useMemo(() => {
-        return data.projects.filter((p) => {
-            const matchesTags =
+        return data.projects.filter(
+            (p) =>
                 selectedTags.length === 0 ||
-                selectedTags.every((tag) => p.tags.includes(tag))
-
-            const matchesSearch =
-                !searchQuery ||
-                p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                p.description
-                    .toLowerCase()
-                    .includes(searchQuery.toLowerCase()) ||
-                p.tags.some((t) =>
-                    t.toLowerCase().includes(searchQuery.toLowerCase()),
-                )
-
-            return matchesTags && matchesSearch
-        })
-    }, [selectedTags, searchQuery])
+                selectedTags.some((tag) => p.tags.includes(tag)),
+        )
+    }, [selectedTags])
 
     return (
-        <main className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-24 space-y-12">
-            <div className="space-y-4">
-                <button
-                    onClick={() => navigate('/')}
-                    className="group flex items-center gap-2 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors text-sm font-medium"
-                >
-                    <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
-                    Back to Home
-                </button>
-
-                <div className="space-y-2">
-                    <h1 className="text-3xl font-bold tracking-tight sm:text-4xl text-zinc-900 dark:text-zinc-50">
-                        All Projects
+        <main className="relative z-10 mx-auto max-w-215 px-3 pt-7 pb-16">
+            <div className="sheet-frame bg-background">
+                <div className="hl px-4 pt-6 pb-5 sm:px-6.5">
+                    <button
+                        onClick={() => navigate('/')}
+                        className="group mb-3.5 inline-flex items-center gap-1 font-mono text-xs text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                        <ArrowLeft className="size-3 transition-transform duration-300 ease-out-expo group-hover:-translate-x-0.5" />
+                        Back to home
+                    </button>
+                    <h1 className="text-[26px] font-medium tracking-[-0.02em]">
+                        All projects
                     </h1>
-                    <p className="text-zinc-500 dark:text-zinc-400 max-w-lg">
+                    <p className="mt-1.5 max-w-120 text-sm leading-relaxed text-muted-2">
                         A comprehensive collection of my work, ranging from
                         full-stack applications to experimental design systems.
                     </p>
                 </div>
-            </div>
 
-            <AdvancedFilter tags={allTags} />
+                <AdvancedFilter tags={allTags} />
 
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <AnimatePresence mode="popLayout">
-                    {filteredProjects.map((project) => (
+                    {filteredProjects.map((project, i) => (
                         <motion.div
                             key={project.id}
                             layout
-                            initial={{ opacity: 0, scale: 0.9 }}
+                            initial={{ opacity: 0, scale: 0.97 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.9 }}
-                            transition={{ duration: 0.2 }}
+                            exit={{ opacity: 0, scale: 0.97 }}
+                            transition={{ duration: 0.25 }}
                         >
-                            <ProjectCard project={project} />
+                            <ProjectCard project={project} flip={i % 2 === 1} />
                         </motion.div>
                     ))}
                 </AnimatePresence>
-            </div>
 
-            {filteredProjects.length === 0 && (
-                <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="text-center py-20 space-y-3"
-                >
-                    <p className="text-zinc-500 dark:text-zinc-400 font-medium">
-                        No projects found matching your criteria.
-                    </p>
-                    <button
-                        onClick={resetFilters}
-                        className="text-sm text-zinc-900 dark:text-zinc-100 underline underline-offset-4 hover:opacity-70 transition-opacity"
+                {filteredProjects.length === 0 && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="space-y-3 py-16 text-center"
                     >
-                        Clear all filters
-                    </button>
-                </motion.div>
-            )}
+                        <p className="text-sm font-medium text-muted-foreground">
+                            No projects found matching your criteria.
+                        </p>
+                        <button
+                            onClick={resetFilters}
+                            className="text-sm text-foreground underline underline-offset-4 transition-opacity hover:opacity-70"
+                        >
+                            Clear all filters
+                        </button>
+                    </motion.div>
+                )}
+            </div>
         </main>
     )
 }
