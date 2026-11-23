@@ -9,16 +9,19 @@ import {
     Mail,
     Sun,
     Moon,
+    Volume2,
+    VolumeX,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { useRef, useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useTheme } from '@/hooks/useTheme'
 import { useSound } from '@/hooks/use-sound'
+import { useSoundSettings } from '@/hooks/useSoundSettings'
 import { click001Sound } from '@/lib/click-001'
 import { toggle001Sound } from '@/lib/toggle-001'
 import type { SoundAsset } from '@/lib/sound-types'
-import { cn } from '@/utils/cn'
+import { cn } from '@/lib/utils'
 import { useWebHaptics } from 'web-haptics/react'
 
 interface DockItem {
@@ -36,6 +39,9 @@ export default function Dock() {
     const navigate = useNavigate()
     const [activeSection, setActiveSection] = useState<string>('home')
     const [isMobile, setIsMobile] = useState(false)
+
+    const soundEnabled = useSoundSettings((s) => s.soundEnabled)
+    const toggleSound = useSoundSettings((s) => s.toggleSound)
 
     const [playToggle] = useSound(toggle001Sound, { interrupt: true })
 
@@ -121,6 +127,17 @@ export default function Dock() {
         },
     }
 
+    const soundItem: DockItem = {
+        icon: soundEnabled ? Volume2 : VolumeX,
+        label: soundEnabled ? 'Mute sound' : 'Unmute sound',
+        href: '#',
+        onClick: (e) => {
+            e?.preventDefault()
+            if (soundEnabled) playToggle()
+            toggleSound()
+        },
+    }
+
     return (
         <motion.div
             initial={{ y: 100, opacity: 0 }}
@@ -130,7 +147,7 @@ export default function Dock() {
             <nav
                 onMouseMove={(e) => mouseX.set(e.pageX)}
                 onMouseLeave={() => mouseX.set(Infinity)}
-                className="mx-auto flex h-14 sm:h-16 items-end gap-2 sm:gap-4 rounded-2xl border border-border bg-background/80 px-3 pb-2.5 sm:px-4 sm:pb-3 backdrop-blur-md"
+                className="mx-auto flex h-14 sm:h-16 max-w-[calc(100vw-1.5rem)] items-end gap-1.5 sm:gap-4 rounded-2xl bg-background/80 px-2.5 pb-2.5 ring-1 ring-border shadow-[0_12px_32px_-12px_rgba(0,0,0,0.35)] sm:px-4 sm:pb-3 backdrop-blur-md"
                 role="navigation"
                 aria-label="Main navigation"
             >
@@ -143,14 +160,28 @@ export default function Dock() {
                         {...item}
                     />
                 ))}
-                <div className="h-6 sm:h-8 w-px bg-border mb-1" />
-                <IconContainer
-                    mouseX={mouseX}
-                    key={themeItem.label}
-                    active={false}
-                    isMobile={isMobile}
-                    {...themeItem}
-                />
+                <div className="mb-1 h-6 w-px bg-border sm:h-8" />
+                {/* Reference groups the two toggles in one capsule with a
+                    divider, so they read as a single control cluster. */}
+                <div className="flex items-center gap-1 rounded-full bg-muted p-1 ring-1 ring-border-2">
+                    <IconContainer
+                        mouseX={mouseX}
+                        key={soundItem.label}
+                        active={false}
+                        isMobile={isMobile}
+                        staticSize
+                        {...soundItem}
+                    />
+                    <div className="h-5 w-px bg-border sm:h-6" />
+                    <IconContainer
+                        mouseX={mouseX}
+                        key={themeItem.label}
+                        active={false}
+                        isMobile={isMobile}
+                        staticSize
+                        {...themeItem}
+                    />
+                </div>
             </nav>
         </motion.div>
     )
@@ -164,10 +195,13 @@ function IconContainer({
     onClick,
     active,
     isMobile = false,
+    staticSize = false,
 }: DockItem & {
     mouseX: MotionValue<number>
     active: boolean
     isMobile?: boolean
+    /** Controls keep a fixed size; only nav items magnify. */
+    staticSize?: boolean
 }) {
     const ref = useRef<HTMLAnchorElement>(null)
 
@@ -179,8 +213,12 @@ function IconContainer({
         return val - bounds.x - bounds.width / 2
     })
 
-    const minSize = isMobile ? 36 : 40
-    const maxSize = isMobile ? 56 : 80
+    // Controls are deliberately smaller so the pill wrapping them stays no
+    // taller than a nav item; anything bigger lifts its top past the nav edge.
+    const minSize = staticSize ? (isMobile ? 28 : 32) : isMobile ? 36 : 40
+    // Nav is h-14/h-16 with items-end, so magnification may only use the
+    // space left after the bottom padding; bigger applied sizes burst out.
+    const maxSize = staticSize ? minSize : isMobile ? 44 : 52
 
     const widthTransform = useTransform(
         distance,
