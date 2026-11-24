@@ -102,9 +102,9 @@ export default function Dock() {
     const navItems: DockItem[] = [
         { icon: Home, label: 'Home', href: '#home' },
         { icon: Briefcase, label: 'Experience', href: '#work' },
-        { icon: GraduationCap, label: 'Education', href: '#education' },
-        { icon: Code, label: 'Skills', href: '#skills' },
         { icon: FolderOpen, label: 'Projects', href: '#projects' },
+        { icon: Code, label: 'Skills', href: '#skills' },
+        { icon: GraduationCap, label: 'Education', href: '#education' },
         { icon: Mail, label: 'Contact', href: '#contact' },
     ].map((item) => ({
         ...item,
@@ -147,7 +147,7 @@ export default function Dock() {
             <nav
                 onMouseMove={(e) => mouseX.set(e.pageX)}
                 onMouseLeave={() => mouseX.set(Infinity)}
-                className="mx-auto flex h-14 sm:h-16 max-w-[calc(100vw-1.5rem)] items-end gap-1.5 sm:gap-4 rounded-2xl bg-background/80 px-2.5 pb-2.5 ring-1 ring-border shadow-[0_12px_32px_-12px_rgba(0,0,0,0.35)] sm:px-4 sm:pb-3 backdrop-blur-md"
+                className="mx-auto flex h-14 sm:h-16 max-w-[calc(100vw-1.5rem)] items-end gap-1.5 sm:gap-4 rounded-4xl bg-background/80 px-2.5 pb-2.5 ring-1 ring-border shadow-[0_12px_32px_-12px_rgba(0,0,0,0.35)] sm:px-4 sm:pb-3 backdrop-blur-md"
                 role="navigation"
                 aria-label="Main navigation"
             >
