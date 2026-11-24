@@ -63,3 +63,32 @@ export interface PortfolioData {
     projects: Project[]
     footer: Footer
 }
+
+/** One day of the contribution calendar; `l` is GitHub's 0-4 shade bucket. */
+export interface ActivityDay {
+    d: string
+    l: number
+    c: number
+}
+
+export interface ActivitySource {
+    user: string
+    total: number
+    merged: number
+    currentStreak: number
+    longestStreak: number
+    bestDay: { date: string; count: number }
+    days: ActivityDay[]
+}
+
+export interface Activity {
+    generated: string
+    /** GitHub totals; `days` is the merged GitHub+GitLab calendar. */
+    github: ActivitySource
+    gitlab: {
+        host: string
+        user: string
+        total: number
+        days: { d: string; c: number }[]
+    } | null
+}

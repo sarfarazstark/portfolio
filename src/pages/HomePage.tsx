@@ -1,15 +1,18 @@
 import Hero from '@/components/sections/Hero'
 import About from '@/components/sections/About'
 import Connect from '@/components/sections/Connect'
+import Activity from '@/components/sections/Activity'
 import Experience from '@/components/sections/Experience'
 import Education from '@/components/sections/Education'
 import Skills from '@/components/sections/Skills'
 import Projects from '@/components/sections/Projects/ProjectGrid'
 import Footer from '@/components/sections/Footer'
-import type { PortfolioData } from '@/types/portfolio'
+import type { Activity as ActivityData, PortfolioData } from '@/types/portfolio'
 import portfolioData from '@/data/portfolio.json'
+import activityData from '@/data/activity.json'
 
 const data = portfolioData as PortfolioData
+const activity = activityData as ActivityData
 
 export default function HomePage() {
     return (
@@ -23,6 +26,7 @@ export default function HomePage() {
                     socials={data.footer.socials}
                     resume={data.profile.resume}
                 />
+                <Activity activity={activity} />
                 <Experience experiences={data.experience} />
                 <Education education={data.education} />
                 <Skills skills={data.skills} />
