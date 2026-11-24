@@ -38,4 +38,4 @@ SQLite, Git, Figma.
 
 ## Contact
 
-Email: itssarfarazstark@gmail.com
+Email: hello@sarfaraz.fyi
