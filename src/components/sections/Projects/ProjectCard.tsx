@@ -35,18 +35,11 @@ const ProjectCard = ({
                 loading="lazy"
                 className="absolute inset-0 size-full object-cover object-top transition-transform duration-700 ease-out-expo group-hover:scale-[1.04]"
             />
-            {/* The photo is opaque, so it covers the hairlines the card and the
-                sheet-frame draw underneath it; redraw them on its own edges. */}
+            {/* The photo is opaque, so it covers the ring .sheet-frame draws
+                under the card; redraw it on the photo's own edges. */}
             <div
                 aria-hidden="true"
-                className={cn(
-                    'pointer-events-none absolute inset-0 shadow-[inset_0_-1px_0_var(--border),inset_1px_0_0_var(--border),inset_-1px_0_0_var(--border)]',
-                    // Side by side, the edge facing the copy is a seam inside
-                    // the card, not an outline, so that hairline comes off.
-                    flip
-                        ? 'md:shadow-[inset_0_-1px_0_var(--border),inset_-1px_0_0_var(--border)]'
-                        : 'md:shadow-[inset_0_-1px_0_var(--border),inset_1px_0_0_var(--border)]',
-                )}
+                className="pointer-events-none absolute inset-0 ring-1 ring-border ring-inset"
             />
         </div>
 
