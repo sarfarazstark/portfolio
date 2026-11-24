@@ -1,0 +1,36 @@
+name: activity
+
+# The graph is filled at build time, so without a schedule it only moves when
+# something is pushed. This refreshes it daily and lets the commit trigger the
+# normal Netlify deploy.
+on:
+    schedule:
+        - cron: '17 3 * * *'
+    workflow_dispatch:
+
+permissions:
+    contents: write
+
+concurrency:
+    group: activity
+    cancel-in-progress: true
+
+jobs:
+    refresh:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: oven-sh/setup-bun@v2
+            - run: bun install --frozen-lockfile
+            - run: node scripts/fetch-activity.mjs
+            # Left alone when the fetch failed: the script exits 0 and keeps
+            # the committed file, so there is nothing to commit.
+            - run: |
+                  if git diff --quiet -- src/data/activity.json; then
+                      echo "no new activity"
+                      exit 0
+                  fi
+                  git config user.name 'github-actions[bot]'
+                  git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+                  git commit -m 'chore(activity): refresh contribution graph' -- src/data/activity.json
+                  git push

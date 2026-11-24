@@ -146,10 +146,19 @@ async function main() {
         bestDay: { date: best.d, count: best.c },
         days,
     }
-    await writeFile(
-        OUT,
-        JSON.stringify({ generated: new Date().toISOString(), github, gitlab }, null, 1) + '\n',
-    )
+    const payload =
+        JSON.stringify(
+            { generated: new Date().toISOString(), github, gitlab },
+            null,
+            1,
+        ) + '\n'
+    // The scheduled job commits this file, so a run that found nothing new
+    // must not touch it: only the timestamp would differ, and that would add
+    // a commit a day of pure noise. Compare the payload without it.
+    const body = (s) => s.replace(/"generated": "[^"]*",\n/, '')
+    if (!previous || body(JSON.stringify(previous, null, 1) + '\n') !== body(payload)) {
+        await writeFile(OUT, payload)
+    }
     console.log(
         `activity: ${github.total} contributions, ${github.merged} merged PRs, ` +
             `streak ${current}/${longest}, ${days.length} days` +
