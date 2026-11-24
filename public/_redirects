@@ -1,0 +1,5 @@
+# SPA fallback. Without this, a direct hit on /projects (or any client route)
+# is a real 404 from the CDN: only / has an index.html to serve. Vite's dev
+# server and preview rewrite for you, which is why this only broke in prod.
+# Existing files are served before this rule, so assets are unaffected.
+/*  /index.html  200

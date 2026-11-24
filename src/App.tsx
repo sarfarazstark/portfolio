@@ -1,5 +1,11 @@
 import { useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+import {
+    BrowserRouter as Router,
+    Navigate,
+    Route,
+    Routes,
+    useLocation,
+} from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useTheme } from '@/hooks/useTheme'
 import Dock from '@/components/dock/Dock'
@@ -29,9 +35,16 @@ function AnimatedRoutes() {
                 <Routes location={location}>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/projects" element={<ProjectsPage />} />
+                    {/* Singular is what people type; keep it working. */}
+                    <Route
+                        path="/project"
+                        element={<Navigate to="/projects" replace />}
+                    />
                     <Route
                         path="/frontendmentor"
-                        element={<Redirect url="https://sarfaraz-fm.netlify.app" />}
+                        element={
+                            <Redirect url="https://sarfaraz-fm.netlify.app" />
+                        }
                     />
                 </Routes>
             </motion.div>
