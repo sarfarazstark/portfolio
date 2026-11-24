@@ -12,8 +12,6 @@ import Dock from '@/components/dock/Dock'
 import HomePage from '@/pages/HomePage'
 import ProjectsPage from '@/pages/ProjectsPage'
 import Redirect from '@/components/ui/Redirect'
-// TEMPORARY: background pattern preview. Remove with the component.
-import BackgroundSwitcher from '@/components/dev/BackgroundSwitcher'
 
 function ScrollToTop() {
     const { pathname } = useLocation()
@@ -66,8 +64,6 @@ function App() {
         <div className="min-h-screen text-foreground selection:bg-primary/20">
             <AnimatedRoutes />
             {pathname === '/' && <Dock />}
-            {/* TEMPORARY: background pattern preview. */}
-            <BackgroundSwitcher />
         </div>
     )
 }
