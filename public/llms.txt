@@ -1,0 +1,41 @@
+# Sarfaraz — Full Stack Developer
+
+> Full Stack Developer in Kolkata, India building fast, modern web applications
+> with Next.js and Laravel. This site is a personal portfolio: profile, work
+> history, skills, and selected projects with links to source and live demos.
+
+## About
+
+Sarfaraz is a Full Stack Developer specializing in Next.js and Laravel,
+building scalable, high-performance web applications with clean, maintainable
+code and a focus on user experience. Location: Kolkata, India.
+
+## Projects
+
+- [Motus Gym Management](https://sarfaraz.fyi/#projects): Gym management system — memberships, billing, and attendance.
+- [Audiophile](https://sarfaraz.fyi/#projects): Audio e-commerce storefront with cart and checkout.
+- [Frontend Mentor Challenges](https://sarfaraz.fyi/#projects): Responsive challenge solutions.
+- [Snapcast](https://sarfaraz.fyi/#projects): Screen and audio sharing app.
+- [Finco](https://sarfaraz.fyi/#projects): Personal finance dashboard.
+- [Developer Portfolio](https://sarfaraz.fyi/#projects): This site — React, Vite, and Tailwind CSS.
+
+## Skills
+
+Next.js, React.js, Node.js, Laravel, React Native, Tailwind CSS, PostgreSQL,
+MongoDB, Docker, TypeScript, JavaScript, PHP, SQL, InertiaJS, Electron,
+SQLite, Git, Figma.
+
+## Elsewhere
+
+- [GitHub](https://github.com/sarfarazstark)
+- [LinkedIn](https://linkedin.com/in/sarfarazstark)
+- [Résumé](https://sarfaraz-resume.edgeone.app/)
+
+## Machine-readable
+
+- [Agent resource manifest](https://sarfaraz.fyi/.well-known/ard.json): ARD
+  entries describing this site as an agent-usable resource.
+
+## Contact
+
+Email: itssarfarazstark@gmail.com

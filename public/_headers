@@ -1,0 +1,32 @@
+# Netlify: hashed build output is immutable; everything else revalidates.
+/assets/*
+    Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
+    Cache-Control: public, max-age=31536000, immutable
+
+/icons/*
+    Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+    Cache-Control: public, max-age=31536000, immutable
+
+/ascii-rest-edge-orbit.mp4
+    Cache-Control: public, max-age=31536000, immutable
+
+/ascii-rest-edge-orbit-poster.webp
+    Cache-Control: public, max-age=31536000, immutable
+
+/*.js
+    Cache-Control: public, max-age=31536000, immutable
+
+/*.css
+    Cache-Control: public, max-age=31536000, immutable
+
+/.well-known/*
+    Content-Type: application/json
+    Cache-Control: public, max-age=3600
+
+/llms.txt
+    Content-Type: text/plain; charset=utf-8
+    Cache-Control: public, max-age=3600

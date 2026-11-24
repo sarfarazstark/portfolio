@@ -47,11 +47,6 @@ const ProjectCard = ({
                 <h3 className="text-lg font-medium tracking-[-0.01em]">
                     {project.title}
                 </h3>
-                {project.period && (
-                    <span className="font-mono text-[11.5px] text-muted-foreground sm:whitespace-nowrap">
-                        {project.period}
-                    </span>
-                )}
             </div>
 
             <p className="prose-body mt-2 text-[13.5px] text-muted-2 text-pretty">
@@ -71,6 +66,7 @@ const ProjectCard = ({
                     <LinkChip
                         href={project.links.github}
                         label="Source"
+                        srLabel={`${project.title} source on GitHub`}
                         icon={<Github />}
                     />
                 )}
@@ -78,6 +74,7 @@ const ProjectCard = ({
                     <LinkChip
                         href={project.links.live}
                         label="Visit"
+                        srLabel={`Visit ${project.title}`}
                         icon={<GlobeIcon />}
                     />
                 )}
@@ -89,10 +86,13 @@ const ProjectCard = ({
 function LinkChip({
     href,
     label,
+    srLabel,
     icon,
 }: {
     href: string
     label: string
+    /** Distinct accessible name; the visible label repeats across cards. */
+    srLabel?: string
     icon: React.ReactNode
 }) {
     return (
@@ -105,7 +105,8 @@ function LinkChip({
             <span className="size-3 text-muted-foreground [&>svg]:size-3">
                 {icon}
             </span>
-            {label}
+            <span className="sr-only">{srLabel ?? label}</span>
+            <span aria-hidden="true">{label}</span>
             <ArrowUpRight className="size-3 text-muted-4 transition-transform duration-300 ease-spring group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 group-hover/link:text-foreground" />
         </a>
     )

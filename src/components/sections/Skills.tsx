@@ -22,12 +22,14 @@ const Skills = ({ skills }: { skills: Skill[] }) => {
                         <Chip
                             icon={
                                 skill.icon && (
-                                    <i
-                                        className={`devicon-${skill.icon}-${
-                                            skill.icon === 'electron'
-                                                ? 'original'
-                                                : 'plain'
-                                        } colored text-base`}
+                                    <img
+                                        src={`/icons/${skill.icon}.svg`}
+                                        alt=""
+                                        width={16}
+                                        height={16}
+                                        loading="lazy"
+                                        decoding="async"
+                                        className="size-4"
                                     />
                                 )
                             }

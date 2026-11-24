@@ -1,0 +1,23 @@
+{
+  "entries": [
+    {
+      "@context": "https://agenticresourcediscovery.org/context/v1",
+      "identifier": "urn:air:sarfaraz.fyi:portfolio",
+      "displayName": "Sarfaraz — Full Stack Developer Portfolio",
+      "type": "application/agent-card+json",
+      "url": "https://sarfaraz.fyi/.well-known/agent-card.json",
+      "description": "Personal portfolio of Sarfaraz, a Full Stack Developer in Kolkata, India working in Next.js and Laravel. Read his profile, work history, skills, projects, and contact details.",
+      "representativeQueries": [
+        "Who is Sarfaraz and what does he do?",
+        "Show me Sarfaraz's full stack developer projects",
+        "What technologies does Sarfaraz work with?",
+        "How can I contact Sarfaraz?",
+        "Where has Sarfaraz worked?"
+      ],
+      "capabilities": ["ReadProfile", "ListProjects", "ListSkills", "ReadExperience", "GetContact"],
+      "tags": ["portfolio", "developer", "full-stack", "nextjs", "laravel"],
+      "version": "1.0.0",
+      "updatedAt": "2026-11-24T00:00:00Z"
+    }
+  ]
+}

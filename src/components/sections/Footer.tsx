@@ -18,11 +18,17 @@ const Footer = ({ footer }: { footer: FooterType }) => {
                     aria-hidden="true"
                     className="pointer-events-none absolute inset-0 -z-10"
                 >
-                    <img
-                        src="/ascii-rest-edge-orbit.gif"
-                        alt=""
-                        loading="lazy"
-                        decoding="async"
+                    {/* Video, not the 262KB gif: same art at 104KB. The poster
+                        paints first so the block is never empty while it decodes. */}
+                    <video
+                        src="/ascii-rest-edge-orbit.mp4"
+                        poster="/ascii-rest-edge-orbit-poster.webp"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="none"
+                        aria-hidden="true"
                         className="size-full object-cover object-center"
                     />
                     <div className="absolute inset-0 bg-linear-to-b from-black/55 via-black/35 to-black/75" />

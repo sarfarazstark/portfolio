@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 .fit-mobile.png
+# Local Lighthouse runs
+.lh*.json
+.tmpx/

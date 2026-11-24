@@ -1,0 +1,38 @@
+{
+  "name": "Sarfaraz — Portfolio",
+  "description": "Personal portfolio of Sarfaraz, a Full Stack Developer in Kolkata, India specializing in Next.js and Laravel. Provides profile, work history, skills, and project listings.",
+  "url": "https://sarfaraz.fyi/",
+  "version": "1.0.0",
+  "capabilities": [
+    {
+      "name": "ReadProfile",
+      "description": "Read Sarfaraz's name, role, location, and short bio.",
+      "url": "https://sarfaraz.fyi/#about"
+    },
+    {
+      "name": "ListProjects",
+      "description": "List selected projects with descriptions and links to source and live demos.",
+      "url": "https://sarfaraz.fyi/#projects"
+    },
+    {
+      "name": "ListSkills",
+      "description": "List the languages, frameworks, and tools Sarfaraz works with.",
+      "url": "https://sarfaraz.fyi/#skills"
+    },
+    {
+      "name": "ReadExperience",
+      "description": "Read work history and education.",
+      "url": "https://sarfaraz.fyi/#experience"
+    },
+    {
+      "name": "GetContact",
+      "description": "Get contact channels: email, GitHub, and LinkedIn.",
+      "url": "https://sarfaraz.fyi/#contact"
+    }
+  ],
+  "contact": {
+    "email": "itssarfarazstark@gmail.com",
+    "github": "https://github.com/sarfarazstark",
+    "linkedin": "https://linkedin.com/in/sarfarazstark"
+  }
+}
