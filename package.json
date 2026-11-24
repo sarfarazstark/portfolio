@@ -13,6 +13,7 @@
 		"@tailwindcss/vite": "^4.2.0",
 		"ascii.rest": "^0.4.0",
 		"clsx": "^2.1.1",
+		"date-fns": "^4.4.0",
 		"framer-motion": "^12.34.2",
 		"lucide-react": "^0.574.0",
 		"react": "^19.2.0",

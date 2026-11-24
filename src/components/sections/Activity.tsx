@@ -1,35 +1,17 @@
 import { motion } from 'framer-motion'
-import type { Activity as ActivityData, ActivityDay } from '@/types/portfolio'
+import type { Activity as ActivityData } from '@/types/portfolio'
 import { SectionHeader } from '@/components/ui/sheet'
-import { cn } from '@/lib/utils'
-
-const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
-
-/** Density ramp in the site's own ink, so it reads without a new hue. */
-const LEVELS = [
-    'bg-surface-3',
-    'bg-foreground/20',
-    'bg-foreground/40',
-    'bg-foreground/65',
-    'bg-foreground',
-]
-
-/** Seven rows, one column per week, the way the calendar is always drawn. */
-function toWeeks(days: ActivityDay[]) {
-    const pad = new Date(days[0].d + 'T00:00:00Z').getUTCDay()
-    const cells: (ActivityDay | null)[] = [
-        ...Array.from({ length: pad }, () => null),
-        ...days,
-    ]
-    const weeks: (ActivityDay | null)[][] = []
-    for (let i = 0; i < cells.length; i += 7) {
-        weeks.push(cells.slice(i, i + 7))
-    }
-    return weeks
-}
+import {
+    ContributionGraph,
+    ContributionGraphBlock,
+    ContributionGraphCalendar,
+    ContributionGraphFooter,
+    ContributionGraphLegend,
+} from '@/components/ui/contribution-graph'
 
 const fmt = (n: number) => n.toLocaleString('en-US')
-const plural = (n: number, word: string) => `${fmt(n)} ${word}${n === 1 ? '' : 's'}`
+const plural = (n: number, word: string) =>
+    `${fmt(n)} ${word}${n === 1 ? '' : 's'}`
 
 /**
  * Contribution and merge counts, fetched at build time by
@@ -37,9 +19,14 @@ const plural = (n: number, word: string) => `${fmt(n)} ${word}${n === 1 ? '' : '
  */
 const Activity = ({ activity }: { activity: ActivityData }) => {
     const { github, gitlab } = activity
-    const weeks = toWeeks(github.days)
     // GitLab's merge count needs a token, so only GitHub can report one.
     const total = github.total + (gitlab?.total ?? 0)
+    // Both calendars are already merged into github.days by the build script.
+    const graph = github.days.map((d) => ({
+        date: d.d,
+        count: d.c,
+        level: d.l,
+    }))
 
     const stats: [string, string][] = [
         [fmt(total), 'Contributions'],
@@ -73,73 +60,52 @@ const Activity = ({ activity }: { activity: ActivityData }) => {
                 </dl>
 
                 <div className="border-t border-border px-4 py-5 sm:px-6.5">
-                    {/* 53 weeks never fit a phone; the graph scrolls, the page does not. */}
-                    <div className="overflow-x-auto pb-1">
-                        <div className="w-max">
-                            <div
-                                className="grid gap-[3px] pl-6.5 text-[10px] text-muted-foreground"
-                                style={{
-                                    gridTemplateColumns: `repeat(${weeks.length}, 10px)`,
-                                }}
-                            >
-                                {weeks.map((week, i) => {
-                                    const first = week.find(Boolean)
-                                    const month = first
-                                        ? MONTHS[new Date(first.d + 'T00:00:00Z').getUTCMonth()]
-                                        : ''
-                                    // Label only when the month changes, so it is not repeated.
-                                    const prev = weeks[i - 1]?.find(Boolean)
-                                    const prevMonth = prev
-                                        ? MONTHS[new Date(prev.d + 'T00:00:00Z').getUTCMonth()]
-                                        : ''
-                                    return (
-                                        <span key={i} className="h-4 whitespace-nowrap">
-                                            {month !== prevMonth ? month : ''}
-                                        </span>
-                                    )
-                                })}
-                            </div>
-
-                            <div className="mt-1 flex gap-[3px]">
-                                <div className="flex w-6 shrink-0 flex-col gap-[3px] pr-1.5 text-[10px] text-muted-foreground">
-                                    {['', 'Mon', '', 'Wed', '', 'Fri', ''].map((d, i) => (
-                                        <span key={i} className="flex h-2.5 items-center">
-                                            {d}
-                                        </span>
-                                    ))}
-                                </div>
-                                <div
-                                    className="grid grid-flow-col gap-[3px]"
-                                    style={{
-                                        gridTemplateRows: 'repeat(7, 10px)',
-                                        gridAutoColumns: '10px',
-                                    }}
-                                >
-                                    {weeks.flat().map((day, i) =>
-                                        day ? (
-                                            <span
-                                                key={day.d}
-                                                title={`${day.c} on ${day.d}`}
-                                                className={cn(
-                                                    'size-2.5 rounded-[2px]',
-                                                    LEVELS[day.l] ?? LEVELS[0],
-                                                )}
-                                            />
-                                        ) : (
-                                            <span key={`pad-${i}`} className="size-2.5" />
-                                        ),
-                                    )}
-                                </div>
-                            </div>
+                    {/* Weekday labels sit outside the scroller so they stay put.
+                        Upstream's Labels.weekdays is declared but never rendered. */}
+                    <div className="flex gap-1.5">
+                        <div
+                            aria-hidden
+                            className="flex shrink-0 flex-col pt-[18px] text-[10px] text-muted-foreground"
+                        >
+                            {['', 'Mon', '', 'Wed', '', 'Fri', ''].map(
+                                (d, i) => (
+                                    <span
+                                        key={i}
+                                        className="flex h-[11px] items-center mb-[3px]"
+                                    >
+                                        {d}
+                                    </span>
+                                ),
+                            )}
                         </div>
-                    </div>
-
-                    <div className="mt-2 flex items-center justify-end gap-1.5 text-[10px] text-muted-foreground">
-                        <span>Less</span>
-                        {LEVELS.map((l) => (
-                            <span key={l} className={cn('size-2.5 rounded-[2px]', l)} />
-                        ))}
-                        <span>More</span>
+                        {/* w-max on the root sizes to the whole row, not to the
+                            space left of the weekday gutter, so it spills. */}
+                        <ContributionGraph
+                            className="w-auto min-w-0 flex-1"
+                            data={graph}
+                            blockSize={11}
+                            blockMargin={3}
+                            blockRadius={2}
+                            fontSize={10}
+                        >
+                            <ContributionGraphCalendar
+                                className="[scrollbar-width:none]"
+                                title="Contributions"
+                            >
+                                {({ activity, dayIndex, weekIndex }) => (
+                                    <ContributionGraphBlock
+                                        activity={activity}
+                                        dayIndex={dayIndex}
+                                        weekIndex={weekIndex}
+                                    >
+                                        <title>{`${activity.count} on ${activity.date}`}</title>
+                                    </ContributionGraphBlock>
+                                )}
+                            </ContributionGraphCalendar>
+                            <ContributionGraphFooter>
+                                <ContributionGraphLegend className="ml-auto text-muted-foreground" />
+                            </ContributionGraphFooter>
+                        </ContributionGraph>
                     </div>
                 </div>
             </motion.div>
