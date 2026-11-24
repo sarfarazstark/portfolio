@@ -74,12 +74,14 @@ const DEFAULT_LABELS: Labels = {
   },
 }
 
+// Ink ramp, not the muted gray upstream ships: foreground over background is
+// white to black in light mode and inverts to black to white in dark.
 const THEME = cn(
-  'data-[level="0"]:fill-muted-foreground/5',
-  'data-[level="1"]:fill-muted-foreground/20',
-  'data-[level="2"]:fill-muted-foreground/40',
-  'data-[level="3"]:fill-muted-foreground/60',
-  'data-[level="4"]:fill-muted-foreground/80'
+  'data-[level="0"]:fill-foreground/8',
+  'data-[level="1"]:fill-foreground/25',
+  'data-[level="2"]:fill-foreground/45',
+  'data-[level="3"]:fill-foreground/70',
+  'data-[level="4"]:fill-foreground'
 )
 
 type ContributionGraphContextType = {
