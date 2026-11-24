@@ -100,7 +100,7 @@ function LinkChip({
             href={href}
             target="_blank"
             rel="noreferrer"
-            className="group/link inline-flex items-center gap-1.25 rounded-lg bg-card py-1 pr-2 pl-2.5 text-xs font-medium ring-1 ring-border-2 shadow-(--shadow-card) transition-[transform,box-shadow] duration-300 ease-spring hover:shadow-(--shadow-lift) hover:ring-border-hover"
+            className="btn-bevel group/link inline-flex items-center gap-1.25 rounded-lg py-1 pr-2 pl-2.5 text-xs font-medium text-foreground transition-[box-shadow] duration-300 ease-spring"
         >
             <span className="size-3 text-muted-foreground [&>svg]:size-3">
                 {icon}

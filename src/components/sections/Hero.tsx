@@ -68,18 +68,21 @@ const Hero = ({ profile }: { profile: Profile }) => {
 
 export default Hero
 
-/** Pill whose label letters roll up and out on hover. */
+/**
+ * Pill whose label letters roll up and out on hover. The default look is the
+ * raised dark chip: btn-bevel owns fill, edges and shadow.
+ */
 export function RollPill({
     href,
     children,
     icon,
-    variant = 'solid',
+    variant = 'bevel',
     size = 'sm',
 }: {
     href: string
     children: string
     icon: React.ReactNode
-    variant?: 'solid' | 'outline' | 'white'
+    variant?: 'bevel' | 'white'
     size?: 'sm' | 'lg'
 }) {
     const letters = [...children]
@@ -99,11 +102,9 @@ export function RollPill({
                     ? 'h-11 gap-2.25 rounded-xl px-5 text-[13px]'
                     : 'h-8.5 gap-1.75 rounded-lg px-3.25 text-xs',
                 'group inline-flex items-center font-medium transition-[box-shadow,background-color] duration-300 ease-spring',
-                variant === 'solid'
-                    ? 'bg-primary text-primary-foreground shadow-(--shadow-card) hover:bg-neutral-800 hover:shadow-(--shadow-lift) dark:hover:bg-neutral-300'
-                    : variant === 'white'
-                      ? 'bg-white text-neutral-900 shadow-(--shadow-card) hover:bg-neutral-100 hover:shadow-(--shadow-lift)'
-                      : 'bg-card text-foreground ring-1 ring-border-2 shadow-(--shadow-card) hover:shadow-(--shadow-lift) hover:ring-border-hover',
+                variant === 'white'
+                    ? 'bg-white text-neutral-900 shadow-(--shadow-card) hover:bg-neutral-100 hover:shadow-(--shadow-lift)'
+                    : 'btn-bevel text-foreground',
             ].join(' ')}
         >
             <span
