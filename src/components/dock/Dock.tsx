@@ -32,6 +32,20 @@ interface DockItem {
     sound?: SoundAsset
 }
 
+/**
+ * Both the nav order and the scroll spy read this list, so reordering the
+ * page can never leave one of them behind: the spy resolves the active
+ * section by position on screen, not by index in here.
+ */
+const SECTIONS = [
+    { icon: Home, label: 'Home', href: '#home' },
+    { icon: Briefcase, label: 'Experience', href: '#work' },
+    { icon: FolderOpen, label: 'Projects', href: '#projects' },
+    { icon: Code, label: 'Skills', href: '#skills' },
+    { icon: GraduationCap, label: 'Education', href: '#education' },
+    { icon: Mail, label: 'Contact', href: '#contact' },
+] as const
+
 export default function Dock() {
     const mouseX = useMotionValue(Infinity)
     const { theme, toggleTheme } = useTheme()
@@ -54,15 +68,6 @@ export default function Dock() {
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = [
-                'home',
-                'work',
-                'education',
-                'skills',
-                'projects',
-                'contact',
-            ]
-
             // Priority 1: Check if we are at the very bottom of the page
             const scrollPosition = window.innerHeight + window.scrollY
             const totalHeight = document.documentElement.scrollHeight
@@ -73,19 +78,21 @@ export default function Dock() {
                 return
             }
 
-            // Priority 2: Precise scroll spy using a fixed threshold from the top
-            // This aligns with our scroll-padding-top in index.css
+            // Priority 2: the active section is the lowest one whose top has
+            // passed the threshold, i.e. the one on screen rather than the
+            // last id in a list. This aligns with scroll-padding-top in
+            // index.css and does not depend on the order of SECTIONS.
             let currentSection = 'home'
+            let closest = -Infinity
             const threshold = 150 // px from the top
 
-            for (const sectionId of sections) {
-                const element = document.getElementById(sectionId)
-                if (element) {
-                    const rect = element.getBoundingClientRect()
-                    // If the top of the section is at or above the threshold
-                    if (rect.top <= threshold) {
-                        currentSection = sectionId
-                    }
+            for (const { href } of SECTIONS) {
+                const element = document.getElementById(href.slice(1))
+                if (!element) continue
+                const { top } = element.getBoundingClientRect()
+                if (top <= threshold && top > closest) {
+                    closest = top
+                    currentSection = href.slice(1)
                 }
             }
 
@@ -99,14 +106,7 @@ export default function Dock() {
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
-    const navItems: DockItem[] = [
-        { icon: Home, label: 'Home', href: '#home' },
-        { icon: Briefcase, label: 'Experience', href: '#work' },
-        { icon: FolderOpen, label: 'Projects', href: '#projects' },
-        { icon: Code, label: 'Skills', href: '#skills' },
-        { icon: GraduationCap, label: 'Education', href: '#education' },
-        { icon: Mail, label: 'Contact', href: '#contact' },
-    ].map((item) => ({
+    const navItems: DockItem[] = SECTIONS.map((item) => ({
         ...item,
         onClick: (e?: React.MouseEvent) => {
             if (pathname !== '/') {
