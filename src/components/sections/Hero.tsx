@@ -40,19 +40,6 @@ const Hero = ({ profile }: { profile: Profile }) => {
                 >
                     <span>{profile.role}</span>
                 </motion.div>
-{/*
-                <motion.p
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                        duration: 0.5,
-                        delay: 0.12,
-                        ease: [0.22, 1, 0.36, 1],
-                    }}
-                    className="max-w-[52ch] text-sm leading-relaxed text-muted-2"
-                >
-                    {profile.bio}
-                </motion.p> */}
             </div>
 
             {/* Pinned, not in flow: the wheel must not change the row's height.

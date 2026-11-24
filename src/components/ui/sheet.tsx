@@ -6,17 +6,6 @@ export function SectionHeader({ children }: { children: ReactNode }) {
     return <h2 className="sheet-header">{children}</h2>
 }
 
-/** Plain padded block inside the column, below a header strip. */
-export function SheetBlock({
-    children,
-    className,
-}: {
-    children: ReactNode
-    className?: string
-}) {
-    return <div className={cn('px-4 py-5 sm:px-6.5', className)}>{children}</div>
-}
-
 /**
  * Label/value row that expands. Uses grid-template-rows 0fr -> 1fr so the
  * panel animates to its natural height without measuring or a height hack.
@@ -66,7 +55,7 @@ export function ExpandRow({
     )
 }
 
-export function Chevron({
+function Chevron({
     expanded,
     className,
 }: {

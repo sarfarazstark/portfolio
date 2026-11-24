@@ -119,10 +119,6 @@ body {
     box-shadow: inset 0 -1px 0 var(--border);
 }
 
-.hl-t {
-    box-shadow: inset 0 1px 0 var(--border);
-}
-
 /* Outer column: ring instead of border-x/border-b. */
 .sheet-frame {
     box-shadow:
@@ -155,16 +151,6 @@ body {
     text-wrap: pretty;
 }
 
-/* Monospace eyebrow label */
-.sheet-label {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted-4);
-}
-
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 10px;
@@ -183,8 +169,7 @@ body {
 }
 
 /* Icons that vanish in dark mode */
-.dark .devicon-nextjs-plain.colored,
-.dark .devicon-express-original.colored {
+.dark .devicon-nextjs-plain.colored {
     color: #fafafa !important;
 }
 

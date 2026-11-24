@@ -3,7 +3,6 @@ import { create } from 'zustand'
 interface ProjectFilterState {
     selectedTags: string[]
     toggleTag: (tag: string) => void
-    removeTag: (tag: string) => void
     resetFilters: () => void
 }
 
@@ -25,9 +24,5 @@ export const useProjectFilter = create<ProjectFilterState>((set) => ({
                 }
             }
         }),
-    removeTag: (tag: string) =>
-        set((state) => ({
-            selectedTags: state.selectedTags.filter((t) => t !== tag),
-        })),
     resetFilters: () => set({ selectedTags: [] }),
 }))

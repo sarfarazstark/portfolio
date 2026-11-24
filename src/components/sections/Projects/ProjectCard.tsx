@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowUpRight, Github } from 'lucide-react'
+import { ArrowUpRight, GlobeIcon, Github } from 'lucide-react'
 import type { Project } from '@/types/portfolio'
 import { cn } from '@/lib/utils'
 import { Chip } from '@/components/ui/sheet'
@@ -78,7 +78,7 @@ const ProjectCard = ({
                     <LinkChip
                         href={project.links.live}
                         label="Visit"
-                        icon={<ArrowUpRight />}
+                        icon={<GlobeIcon />}
                     />
                 )}
             </div>
