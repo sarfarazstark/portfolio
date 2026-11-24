@@ -4,6 +4,7 @@ import { ArrowLeft } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import portfolioData from '@/data/portfolio.json'
 import type { PortfolioData } from '@/types/portfolio'
+import { useSeo } from '@/hooks/useSeo'
 import { useProjectFilter } from '@/hooks/useProjectFilter'
 import ProjectCard from '@/components/sections/Projects/ProjectCard'
 import AdvancedFilter from '@/components/sections/Projects/AdvancedFilter'
@@ -11,6 +12,13 @@ import AdvancedFilter from '@/components/sections/Projects/AdvancedFilter'
 const data = portfolioData as PortfolioData
 
 export default function ProjectsPage() {
+    useSeo({
+        title: 'Projects — Sarfaraz, Full Stack Developer in Kolkata',
+        description:
+            'Selected work by Sarfaraz: Next.js and Laravel apps including a gym management system, a podcast streaming app and Frontend Mentor challenges.',
+        path: '/projects',
+    })
+
     const navigate = useNavigate()
     const { selectedTags, resetFilters } = useProjectFilter()
 

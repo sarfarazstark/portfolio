@@ -7,6 +7,7 @@ import Education from '@/components/sections/Education'
 import Skills from '@/components/sections/Skills'
 import Projects from '@/components/sections/Projects/ProjectGrid'
 import Footer from '@/components/sections/Footer'
+import { useSeo } from '@/hooks/useSeo'
 import type { Activity as ActivityData, PortfolioData } from '@/types/portfolio'
 import portfolioData from '@/data/portfolio.json'
 import activityData from '@/data/activity.json'
@@ -15,6 +16,13 @@ const data = portfolioData as PortfolioData
 const activity = activityData as ActivityData
 
 export default function HomePage() {
+    useSeo({
+        title: 'Sarfaraz — Full Stack Developer in Kolkata, India',
+        description:
+            'Sarfaraz is a full stack developer in Kolkata building fast, modern web apps with Next.js, React and Laravel. See his projects, experience and open source work.',
+        path: '/',
+    })
+
     return (
         <main className="relative z-10 mx-auto max-w-215 px-3 pt-7 pb-32">
             <div className="sheet-frame bg-background">
