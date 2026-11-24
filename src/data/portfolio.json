@@ -2,7 +2,7 @@
     "profile": {
         "name": "Sarfaraz",
         "role": "Full Stack Developer",
-        "avatar": "https://github.com/sarfarazstark.png",
+        "avatar": "/avatar.webp",
         "location": "Kolkata, India",
         "bio": "Full Stack Developer building fast, modern web applications with Next.js and Laravel.",
         "resume": "https://sarfaraz-resume.edgeone.app/"
@@ -15,7 +15,7 @@
             "role": "Full Stack Developer",
             "period": "Aug 2025 - Present",
             "description": "Architecting full-stack solutions with a focus on modularity. Currently reducing development overhead by implementing a shared component library across Laravel and React projects for high-performance enterprise applications.",
-            "logo": "/aofenggsys_logo.jpg"
+            "logo": "/aofenggsys_logo.webp"
         },
         {
             "id": "2",
@@ -23,7 +23,7 @@
             "role": "Web Development Intern",
             "period": "Aug 2024 - Dec 2024",
             "description": "Created a Online Book Store Project. Worked with HTML, CSS, JavaScript, PHP, MySQL, and Bootstrap to design and build the platform.",
-            "logo": "/euphoria_genx_logo.jpg"
+            "logo": "/euphoria_genx_logo.webp"
         },
         {
             "id": "3",
@@ -31,7 +31,7 @@
             "role": "Web Developer",
             "period": "Oct 2023 - Sep 2024",
             "description": "Designed and launched the official club website as a central hub for event details and resources. Developed internal automation tools to manage event registrations, significantly reducing manual data entry for the core team.",
-            "logo": "/dscmakaut_logo.jpg"
+            "logo": "/dscmakaut_logo.webp"
         }
     ],
     "education": [
@@ -40,7 +40,7 @@
             "school": "Maulana Abul Kalam Azad University of Technology",
             "degree": "Bachelor of Computer Application",
             "period": "2022 - 2025",
-            "logo": "/wbut.jpg"
+            "logo": "/wbut.webp"
         }
     ],
     "skills": [

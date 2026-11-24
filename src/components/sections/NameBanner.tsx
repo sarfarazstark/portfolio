@@ -3,8 +3,10 @@ import { Banner } from 'ascii.rest/react'
 
 /**
  * The name in block letters, its own section between the CTA and the credit.
- * This font advances 0.6em and its block glyph inks 1.4em tall, so 15px/21px
- * makes every cell a whole pixel; fractional sizes smear hairlines between rows.
+ * "SARFARAZ" is 79 columns at 0.6em advance, so the size has to follow the
+ * viewport or the row runs past the edge on phones: 1.8vw leaves a little
+ * slack under 79 cells, and 15px covers every width from 833px. Whole-pixel cells
+ * would avoid the hairline smear, but a fixed size cannot fit both.
  */
 const NameBanner = () => (
     <section id="name" className="hl px-4 py-5 sm:px-6.5">
@@ -22,8 +24,8 @@ const NameBanner = () => (
                 className="mx-auto block w-full text-center"
                 style={{
                     fontFamily: '"ascii.rest mono", ui-monospace, monospace',
-                    fontSize: '15px',
-                    lineHeight: '21px',
+                    fontSize: 'clamp(6px, 1.8vw, 15px)',
+                    lineHeight: 1.4,
                 }}
             />
         </motion.div>

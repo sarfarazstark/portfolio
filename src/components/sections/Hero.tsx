@@ -14,6 +14,8 @@ const Hero = ({ profile }: { profile: Profile }) => {
                 <img
                     src={profile.avatar}
                     alt={profile.name}
+                    width={184}
+                    height={184}
                     className="aspect-square w-full rounded-[10px] object-cover"
                 />
             </motion.div>
