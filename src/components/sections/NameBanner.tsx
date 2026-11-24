@@ -25,6 +25,10 @@ import { bannerSvg } from 'ascii.rest/svg'
 const CELL = 10 // SVG units per character; also the cell width `scale` uses
 const TRACK = -0.8
 const FONT = (CELL - TRACK) / 0.6 // keeps advance + tracking at exactly CELL
+const BANNER_ID = 'name-banner'
+// Exactly the stack ascii.rest writes into the SVG's <style>.
+const FALLBACK_STACK =
+    'ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace'
 
 const build = () =>
     bannerSvg('SARFARAZ', {
@@ -33,14 +37,28 @@ const build = () =>
         effect: 'still',
         scale: CELL,
     })
+        .replace('<svg ', `<svg id="${BANNER_ID}" `)
         .replace('fill:#1f2328', 'fill:var(--foreground)')
         .replace('fill:#59636e', 'fill:var(--muted-4)')
         .replace(/\s+textLength="[^"]*"/g, '')
+        // The generated style asks for a generic monospace, so the browser
+        // picks the OS one: its box-drawing glyphs are not made to tile, and
+        // on a phone they render as detached rectangles. Naming the vendored
+        // face fixes that and makes the advance the 0.6em the grid assumes.
+        .replace(FALLBACK_STACK, `'ascii.rest mono', ${FALLBACK_STACK}`)
         .replace('font:16.67px', `font:${FONT.toFixed(3)}px`)
         .replace(
             'white-space:pre;',
             `white-space:pre;letter-spacing:${TRACK}px;`,
         )
+        /*
+         * The injected <style> is document-global, not scoped to this SVG, so
+         * its `text` rule restyles every other <text> on the page: the heatmap
+         * month labels inherit this face and `dominant-baseline:central`,
+         * which lifts them out of their clipped box. Scoping both rules to the
+         * banner's own root leaves the rest of the document alone.
+         */
+        .replaceAll('<style>text{', `<style>#${BANNER_ID} text{`)
 
 const NameBanner = () => {
     const svg = useMemo(() => build(), [])
@@ -62,6 +80,32 @@ const NameBanner = () => {
             const el = host.current?.querySelector<SVGGElement>('svg > g')
             const viewBox = el?.ownerSVGElement?.viewBox.baseVal
             if (!live || !el || !viewBox) return
+
+            /*
+             * The rows are indented with spaces, but the face has no space
+             * glyph (its unicode-range starts at U+00B0), so each space falls
+             * back to a narrower one and every indent lands short of the cell
+             * grid. Rows with different indents then sit out of phase and the
+             * shadow stops lining up with the letters. Widening the space to
+             * a full cell puts every row back on the grid.
+             */
+            const svg = el.ownerSVGElement as SVGSVGElement
+            const probe = document.createElementNS(
+                svg.namespaceURI,
+                'text',
+            ) as SVGTextContentElement
+            probe.setAttribute('style', 'word-spacing:0')
+            probe.textContent = '  '
+            svg.appendChild(probe)
+            const space =
+                probe.getNumberOfChars() > 1
+                    ? probe.getStartPositionOfChar(1).x -
+                      probe.getStartPositionOfChar(0).x
+                    : 0
+            probe.remove()
+            if (space > 0)
+                svg.style.wordSpacing = `${(CELL - space).toFixed(3)}px`
+
             const ink = el.getBBox()
             const x = (viewBox.width - ink.width) / 2 - ink.x
             el.setAttribute('transform', `translate(${x.toFixed(2)},0)`)
