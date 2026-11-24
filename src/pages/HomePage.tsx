@@ -26,6 +26,31 @@ export default function HomePage() {
     return (
         <main className="relative z-10 mx-auto max-w-215 px-3 pt-7 pb-32">
             <div className="sheet-frame bg-background">
+                {/* Decorative band above the hero: no text of its own, so it
+                    reads as a scene change rather than a block. Sized to the
+                    hero's own height at each breakpoint (856:132, 366:211).
+                    The video is opaque, so the sheet-frame's ring cannot show
+                    through it and is redrawn here, as the contact band does. */}
+                <section
+                    id="train"
+                    aria-hidden="true"
+                    className="relative isolate aspect-[366/211] overflow-hidden sm:aspect-[836/132]"
+                >
+                    <video
+                        src="/viaduct-steam-train.mp4"
+                        poster="/viaduct-steam-train-poster.webp"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="none"
+                        className="size-full object-cover object-center"
+                    />
+                    <div
+                        aria-hidden="true"
+                        className="pointer-events-none absolute inset-0 z-10 shadow-[inset_0_0_0_1px_rgb(255_255_255/0.12)]"
+                    />
+                </section>
                 <section id="home">
                     <Hero profile={data.profile} />
                 </section>
