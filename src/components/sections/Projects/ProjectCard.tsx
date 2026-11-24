@@ -36,10 +36,12 @@ const ProjectCard = ({
                 className="absolute inset-0 size-full object-cover object-top transition-transform duration-700 ease-out-expo group-hover:scale-[1.04]"
             />
             {/* The photo is opaque, so it covers the ring .sheet-frame draws
-                under the card; redraw it on the photo's own edges. */}
+                under the card. --border is 10% ink, which vanishes over art,
+                so this edge takes the foreground colour instead: dark on a
+                light photo, light on a dark one. */}
             <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 ring-1 ring-border ring-inset"
+                className="pointer-events-none absolute inset-0 ring-1 ring-foreground/20 ring-inset"
             />
         </div>
 
