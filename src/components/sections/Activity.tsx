@@ -65,13 +65,13 @@ const Activity = ({ activity }: { activity: ActivityData }) => {
                     <div className="flex gap-1.5">
                         <div
                             aria-hidden
-                            className="flex shrink-0 flex-col pt-[18px] text-[10px] text-muted-foreground"
+                            className="flex shrink-0 flex-col pt-4.5 text-[10px] text-muted-foreground"
                         >
                             {['', 'Mon', '', 'Wed', '', 'Fri', ''].map(
                                 (d, i) => (
                                     <span
                                         key={i}
-                                        className="flex h-[11px] items-center mb-[3px]"
+                                        className="flex h-2.75 items-center mb-0.75"
                                     >
                                         {d}
                                     </span>
@@ -89,7 +89,7 @@ const Activity = ({ activity }: { activity: ActivityData }) => {
                             fontSize={10}
                         >
                             <ContributionGraphCalendar
-                                className="[scrollbar-width:none]"
+                                className="scrollbar-none"
                                 title="Contributions"
                             >
                                 {({ activity, dayIndex, weekIndex }) => (

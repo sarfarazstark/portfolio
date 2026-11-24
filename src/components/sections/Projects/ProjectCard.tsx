@@ -25,7 +25,7 @@ const ProjectCard = ({
         {/* Image fills its half edge to edge: no padding, no inner frame. */}
         <div
             className={cn(
-                'group relative min-h-45 overflow-hidden bg-surface-2 md:min-h-53.5',
+                'group relative overflow-hidden bg-surface-2 lg:min-h-76 aspect-4/3 md:aspect-auto',
                 flip ? 'md:order-2' : 'md:order-1',
             )}
         >
@@ -100,7 +100,7 @@ function LinkChip({
             href={href}
             target="_blank"
             rel="noreferrer"
-            className="btn-bevel group/link inline-flex items-center gap-1.25 rounded-lg py-1 pr-2 pl-2.5 text-xs font-medium text-foreground transition-[box-shadow] duration-300 ease-spring"
+            className="btn-bevel group/link inline-flex items-center gap-1.25 rounded-lg py-1 pr-2 pl-2.5 text-xs font-medium text-foreground transition-shadow duration-300 ease-spring"
         >
             <span className="size-3 text-muted-foreground [&>svg]:size-3">
                 {icon}

@@ -26,11 +26,11 @@ export default function HomePage() {
                     socials={data.footer.socials}
                     resume={data.profile.resume}
                 />
-                <Activity activity={activity} />
                 <Experience experiences={data.experience} />
-                <Education education={data.education} />
-                <Skills skills={data.skills} />
                 <Projects projects={data.projects} />
+                <Skills skills={data.skills} />
+                <Education education={data.education} />
+                <Activity activity={activity} />
                 <Footer footer={data.footer} />
             </div>
         </main>
