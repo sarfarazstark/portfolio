@@ -1,10 +1,10 @@
 {
- "generated": "2026-11-26T12:37:39.567Z",
+ "generated": "2026-11-27T12:24:49.549Z",
  "github": {
   "user": "sarfarazstark",
   "total": 2271,
   "merged": 104,
-  "currentStreak": 2,
+  "currentStreak": 0,
   "longestStreak": 25,
   "bestDay": {
    "date": "2026-11-05",
@@ -28,8 +28,8 @@
    },
    {
     "d": "2025-11-26",
-    "c": 1,
-    "l": 1
+    "c": 0,
+    "l": 0
    },
    {
     "d": "2025-11-27",
@@ -1855,18 +1855,19 @@
     "d": "2026-11-26",
     "c": 0,
     "l": 0
+   },
+   {
+    "d": "2026-11-27",
+    "c": 0,
+    "l": 0
    }
   ]
  },
  "gitlab": {
   "host": "https://gitlab.com",
   "user": "sarfarazalam.aof",
-  "total": 730,
+  "total": 729,
   "days": [
-   {
-    "d": "2025-11-26",
-    "c": 1
-   },
    {
     "d": "2025-11-27",
     "c": 1
